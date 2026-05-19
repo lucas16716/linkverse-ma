@@ -1,0 +1,59 @@
+@use "../abstracts/tokens" as token;
+@use "../abstracts/functions" as fn;
+
+
+// ===================================================
+// AXIS — TYPOGRAPHY BASE
+// ===================================================
+
+// ---------------------------------------------------
+// Semantic Tokens
+// ---------------------------------------------------
+// Base
+$font-family-base: token.$font-primary;            // Raleway, Ubuntu, Cantarell, system-ui, -apple-system, sans-serif
+$font-size-base:   token.$font-size-base;          // 16px -> 18px
+$font-weight-base: token.$font-weight-regular;     // Regular
+$line-height-base: token.$line-height-normal;      // 1.5
+$letter-spc-base:  token.$letter-spacing-normal;   // 0em
+$font-color-base:  token.$white;
+
+// Headings
+$font-weight-heading: token.$font-weight-medium;   // Semibold
+$line-height-heading: token.$line-height-tight;    // 1.2
+$letter-spc-heading:  token.$letter-spacing-tight; // -0.02em
+
+$font-size-heading: token.$font-size-lg;                // 18px -> 20px
+
+// Paragraphs (variants)
+$font-size-tagline: token.$font-size-xs;        // 12px
+
+// ---------------------------------------------------
+// Default Typography
+// ---------------------------------------------------
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size:   $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  letter-spacing: $letter-spc-base;
+  color: $font-color-base;
+}
+
+p {
+  &.tagline { font-size: $font-size-tagline; color: fn.color-dark($font-color-base, 25%); }
+}
+
+// ---------------------------------------------------
+// Headings
+// ---------------------------------------------------
+h1, h2 {
+  font-size: $font-size-heading;
+  font-weight:    $font-weight-heading;
+  line-height:    $line-height-heading;
+  letter-spacing: $letter-spc-heading;
+}

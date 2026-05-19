@@ -1,0 +1,24 @@
+{
+  "name": "ma-cambio-linkverse",
+  "version": "1.0.0",
+  "description": "Plataforma Linkverse para centralização de canais de contato e links importantes da M&A Consultoria Câmbio.",
+  "author": "Lucas Code",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucas16716/linkverse-ma.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lucas16716/linkverse-ma/issues"
+  },
+  "homepage": "https://github.com/lucas16716/linkverse-ma#readme",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.99.0",
+    "vite": "^8.0.13"
+  }
+}

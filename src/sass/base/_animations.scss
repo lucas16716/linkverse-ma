@@ -1,0 +1,43 @@
+@use "../abstracts/tokens" as token;
+
+// ===================================================
+// BASE: ANIMATIONS
+// Definições globais de keyframes para animações de UI.
+// ===================================================
+
+// ---------------------------------------------------
+// Semantic Animation Tokens
+// ---------------------------------------------------
+$animations-opacity-0: token.$opacity-0;
+$animations-opacity-1: token.$opacity-100;
+
+// ---------------------------------------------------
+// 1. FADE UP
+// Entrada suave de baixo para cima.
+// Ideal para: Cards, painéis (Glassmorphism) e blocos principais.
+// ---------------------------------------------------
+
+@keyframes fadeUp {
+  0% {
+    opacity: $animations-opacity-0;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: $animations-opacity-1;
+    transform: translateY(0);
+  }
+}
+
+// ---------------------------------------------------
+// 2. FADE IN
+// Aparecimento suave apenas com transição de opacidade.
+// Ideal para: Backgrounds, textos secundários ou ícones.
+// ---------------------------------------------------
+@keyframes fadeIn {
+  0% {
+    opacity: $animations-opacity-0;
+  }
+  100% {
+    opacity: $animations-opacity-1;
+  }
+}

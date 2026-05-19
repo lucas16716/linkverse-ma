@@ -1,0 +1,36 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/functions" as fn;
+
+// ===================================================
+// AXIS — RESET
+// Low-level structural normalization
+// ===================================================
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+* {
+  margin: 0;
+  padding: 0;
+
+  // Accessibility: Reliable focus indicator for keyboard navigation
+  &:focus-visible { @include mix.focus-ring(); }
+  &:focus:not(:focus-visible) { outline: none; }
+}
+
+html {
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #0f0f0f;
+  background-image: url("/assets/svg/bg-fluid-lines.svg");
+  background-image: url("/assets/media/img/bg-fluid-lines.png");
+  background-size: cover;
+  background-position: center; // ou center left para footer livre de linhas
+  background-repeat: no-repeat;
+}
