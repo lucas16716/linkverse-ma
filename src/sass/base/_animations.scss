@@ -14,7 +14,6 @@ $animations-opacity-1: token.$opacity-100;
 // ---------------------------------------------------
 // 1. FADE UP
 // Entrada suave de baixo para cima.
-// Ideal para: Cards, painéis (Glassmorphism) e blocos principais.
 // ---------------------------------------------------
 
 @keyframes fadeUp {
@@ -29,15 +28,14 @@ $animations-opacity-1: token.$opacity-100;
 }
 
 // ---------------------------------------------------
-// 2. FADE IN
-// Aparecimento suave apenas com transição de opacidade.
-// Ideal para: Backgrounds, textos secundários ou ícones.
+// 2. BORDER GLOW (GPU-Optimized)
+// Brilho pulsante em bordas, usando apenas opacidade para performance.
 // ---------------------------------------------------
-@keyframes fadeIn {
-  0% {
-    opacity: $animations-opacity-0;
+@keyframes breathingGlow {
+  0%, 100% {
+    opacity: 0;
   }
-  100% {
-    opacity: $animations-opacity-1;
+  50% {
+    opacity: 1;
   }
 }

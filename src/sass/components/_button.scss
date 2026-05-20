@@ -1,36 +1,40 @@
 @use "../abstracts/tokens" as token;
 @use "../abstracts/mixins" as mix;
-
-// ===================================================
-// AXIS — BUTTON (Structural Component)
-// Neutral, scalable, token-driven
-// ===================================================
+@use "../abstracts/functions" as fn;
 
 // ---------------------------------------------------
 // Semantic Button Tokens
 // ---------------------------------------------------
-$gap-btn:         token.$space-ui-2;
-$line-height-btn: token.$line-height-none;
-$transition-btn:  token.$duration-200 token.$ease-standard;
+$gap-btn:            token.$space-ui-8;
+$padding-btn:        token.$space-ui-14 token.$space-ui-18;
+$padding-btn-mobile: token.$space-ui-10 token.$space-ui-14;
 
-$op-dsbld-btn:    token.$opacity-60;
-$rd-full-round:   token.$radius-full;
+$bg-color-btn: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
+$border-btn:         1px solid rgba(token.$gold, 0.4);
+$border-radius-btn:  token.$radius-md;
+$box-shadow-btn:     token.$shadow-xl;
 
-$padding-btn-sm:  token.$space-ui-8  token.$space-ui-16;
-$padding-btn-md:  token.$space-ui-10 token.$space-ui-20;
-$padding-btn-lg:  token.$space-ui-12 token.$space-ui-24;
-$padding-btn-xl:  token.$space-ui-16 token.$space-ui-32;
+$font-weight-btn:    token.$font-weight-medium;
+$line-height-btn:    token.$line-height-none;
+$transition-btn:     token.$duration-400 token.$ease-back;
+
+$op-dsbld-btn:       token.$opacity-60;
 
 // ---------------------------------------------------
 // Button Default
 // ---------------------------------------------------
 .button {
-  @include mix.flex($justify: center, $align: center, $gap: $gap-btn);
+  @include mix.flex($justify: start, $align: center, $gap: $gap-btn);
+  padding: $padding-btn;  @include mix.respond(md) { padding: $padding-btn-mobile; }
 
-  padding: 0;
-  background-color: transparent;
-  border: 1px solid currentColor;
+  background: $bg-color-btn;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: $border-btn;
+  border-radius: $border-radius-btn;
+  box-shadow: $box-shadow-btn;
   
+  font-weight: $font-weight-btn;
   line-height: $line-height-btn;
   text-decoration: none;
   white-space: nowrap;
@@ -39,10 +43,37 @@ $padding-btn-xl:  token.$space-ui-16 token.$space-ui-32;
   cursor: pointer;
 
   transition:
-    background-color $transition-btn,
+    background $transition-btn,
     color $transition-btn,
     border-color $transition-btn,
+    box-shadow $transition-btn,
     transform $transition-btn;
+
+  @media (hover: hover) {
+    &:hover {
+      color: fn.color-dark(token.$white, 10%); /* Escurece menos, apenas um toque */
+      transform: translateY(-2px); /* Movimento quase imperceptível */
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%); /* Clareia muito sutilmente */
+      border-color: rgba(token.$gold, 0.7); /* Borda ganha só um leve reflexo */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra mais contida e difusa */
+    }
+  }
+
+  &:focus-visible {
+    color: fn.color-dark(token.$white, 10%);
+    transform: translateY(-2px);
+    border-color: rgba(token.$gold, 0.7);
+    box-shadow: 
+      0 8px 20px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(token.$gold, 0.3); /* Anel de foco mais fino (1px) e discreto */
+  }
+
+  &:active {
+    transform: translateY(0); /* Apenas anula o hover, sem afundar a tela */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 100%);
+    border-color: rgba(token.$gold, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra volta para perto do botão */
+  }
 
   // ---------------------------------------------------
   // Button Disabled
@@ -50,22 +81,7 @@ $padding-btn-xl:  token.$space-ui-16 token.$space-ui-32;
   &:disabled { cursor: not-allowed; opacity: $op-dsbld-btn; }
 
   // ---------------------------------------------------
-  // Sizes Modifiers (required)
+  // Button Variants
   // ---------------------------------------------------
-  &.size-sm { padding: $padding-btn-sm; }
-  &.size-md { padding: $padding-btn-md; }
-  &.size-lg { padding: $padding-btn-lg; }
-  &.size-xl { padding: $padding-btn-xl; }
-
-  // ---------------------------------------------------
-  // Shapes Modifiers 
-  // ---------------------------------------------------
-  &.shape-square { aspect-ratio: 1 / 1; }
-  &.shape-circle { aspect-ratio: 1 / 1; border-radius: $rd-full-round; }
-
-  // ---------------------------------------------------
-  // Variant Modifiers 
-  // ---------------------------------------------------
-  &.is-pill  { border-radius: $rd-full-round; }
-  &.is-ghost { text-decoration: underline; border-color: transparent; }
+  
 }

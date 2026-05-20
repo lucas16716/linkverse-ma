@@ -70,3 +70,28 @@
 // Text Gold
 // ---------------------------------------------------
 .text-gold { color: token.$gold; }
+
+// ---------------------------------------------------
+// Divisor de Seções
+// ---------------------------------------------------
+.section-divider {
+  @include mix.flex (row, center, center, token.$space-16);
+  margin-top: token.$section-pad;
+  margin-bottom: 24px;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1; /* Faz as linhas esticarem para preencher o espaço vazio */
+    height: 1px;
+  }
+
+  /* 5. O Toque Sênior: Gradiente para a linha "sumir" nas pontas */
+  &::before {
+    background: linear-gradient(to right, transparent, rgba(token.$gold, 0.6));
+  }
+
+  &::after {
+    background: linear-gradient(to left, transparent, rgba(token.$gold, 0.6));
+  }
+}

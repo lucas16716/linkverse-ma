@@ -11,19 +11,23 @@ $font-primary: 'Raleway', Ubuntu, Cantarell, system-ui, -apple-system, sans-seri
 // ---------------------------------------------------
 // Font Size Scale
 // ---------------------------------------------------
-$font-size-xs:   0.75rem;                                     // Textos super pequenos, avisos legais ou copyrights (12px)
-$font-size-sm:   clamp(0.8125rem, 0.5vw + 0.75rem, 0.875rem); // Descrições de botões e a Tagline (Hgroup <p>) (13px -> 14px)
-$font-size-base: clamp(0.9375rem, 1vw + 0.85rem, 1rem);       // Títulos dos botões de link (Nested Glass) (15px -> 16px)
-$font-size-lg:   clamp(1.125rem, 1.5vw + 0.75rem, 1.25rem);   // Subtítulos de seções ou títulos internos do painel (18px -> 20px)
-$font-size-xl:   clamp(1.375rem, 2vw + 1rem, 1.5rem);         // (Opcional) Apenas se no futuro houver números gigantes (ex: taxas de câmbio) (22px -> 24px)
+// $font-size-xs:   0.75rem;                                     // Textos super pequenos, descrições de botões, tagline, avisos legais ou copyrights (12px)
+// $font-size-sm:   clamp(0.8125rem, 0.5vw + 0.75rem, 0.875rem); // Títulos dos botões de link (Nested Glass) (13px -> 14px)
+// $font-size-md:   clamp(1.125rem, 1.5vw + 0.75rem, 1.25rem);   // Subtítulos de seções ou títulos internos do painel (18px -> 20px)
+// $font-size-lg:   clamp(1.375rem, 2vw + 1rem, 1.5rem);         // (Opcional) Apenas se no futuro houver números gigantes (ex: taxas de câmbio) (22px -> 24px)
+
+$font-size-xs: 0.75rem;                                     // Textos super pequenos  (12px)                          
+$font-size-sm: clamp(0.75rem, 0.22vw + 0.7rem, 0.8125rem);  // Textos globais Mobile  (12px -> 13px)
+$font-size-md: clamp(0.875rem, 0.78vw + 0.5rem, 1rem);      // Textos globais Desktop (14px -> 16px)
+$font-size-lg: clamp(1.125rem, 1.02vw + 0.88rem, 1.375rem); // Título principal (H1)  (18px -> 22px)
 
 // ---------------------------------------------------
 // Font Weight Scale
 // ---------------------------------------------------
 $font-weight-light:    300; // Usado em textos de apoio longos/subtítulos luxuosos
 $font-weight-regular:  400; // Corpo de texto padrão
-$font-weight-medium:   500; // Adicionado para testes de realce intermediário nos botões
-$font-weight-semibold: 600; // Peso padrão ouro para títulos e headings (H1, H2)
+$font-weight-medium:   500; // Peso padrão para títulos e headings (H1, H2)
+$font-weight-semibold: 600; // Adicionado para testes de realce intermediário nos botões  
 $font-weight-bold:     700; // Ênfases pontuais e chamadas de alta importância
 
 // ---------------------------------------------------
@@ -38,7 +42,7 @@ $line-height-normal: 1.5;  // Padrão ouro para leitura de parágrafos confortá
 // ---------------------------------------------------
 $letter-spacing-tight:   -0.02em; // Truque de tipografia para headings parecerem desenhados
 $letter-spacing-normal:  0;
-$letter-spacing-wide:    0.05em;  // Ótimo para textos em UPPERCASE (ex: pequenos rótulos)
+$letter-spacing-wide:    0.15em;  // Ótimo para textos em UPPERCASE
 
 // ---------------------------------------------------
 // Semantic Tokens in base/_typography.scss

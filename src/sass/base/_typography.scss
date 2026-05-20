@@ -1,4 +1,5 @@
 @use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mix;
 @use "../abstracts/functions" as fn;
 
 
@@ -10,22 +11,27 @@
 // Semantic Tokens
 // ---------------------------------------------------
 // Base
-$font-family-base: token.$font-primary;            // Raleway, Ubuntu, Cantarell, system-ui, -apple-system, sans-serif
-$font-size-base:   token.$font-size-base;          // 16px -> 18px
-$font-weight-base: token.$font-weight-regular;     // Regular
-$line-height-base: token.$line-height-normal;      // 1.5
-$letter-spc-base:  token.$letter-spacing-normal;   // 0em
+$font-family-base: token.$font-primary;          // Raleway, Ubuntu, Cantarell, system-ui, -apple-system, sans-serif
+$font-size-base:   token.$font-size-md;          // 14px -> 16px
+$font-size-base-mobile: token.$font-size-sm;     // 12px -> 13px
+$font-weight-base: token.$font-weight-regular;   // Regular
+$line-height-base: token.$line-height-none;      // 1
+$letter-spc-base:  token.$letter-spacing-normal; // 0em
 $font-color-base:  token.$white;
 
-// Headings
-$font-weight-heading: token.$font-weight-medium;   // Semibold
-$line-height-heading: token.$line-height-tight;    // 1.2
-$letter-spc-heading:  token.$letter-spacing-tight; // -0.02em
-
-$font-size-heading: token.$font-size-lg;                // 18px -> 20px
-
 // Paragraphs (variants)
-$font-size-tagline: token.$font-size-xs;        // 12px
+$font-size-tagline: token.$font-size-sm;         // 12px -> 13px
+
+// Headings
+$font-size-h1:   token.$font-size-lg;            // 22px -> 18px
+$font-weight-h1: token.$font-weight-medium;      // Medium
+$line-height-h1: token.$line-height-tight;       // 1.2
+$letter-spc-h1:  token.$letter-spacing-tight;    // -0.02em
+
+$font-size-h2:   token.$font-size-md;            // 14px -> 16px
+$font-size-h2-mobile: token.$font-size-sm;       // 12px -> 13px
+$font-weight-h2: token.$font-weight-regular;     // Regular
+$letter-spc-h2:  token.$letter-spacing-wide;     // 0.15em
 
 // ---------------------------------------------------
 // Default Typography
@@ -42,6 +48,8 @@ body {
   line-height: $line-height-base;
   letter-spacing: $letter-spc-base;
   color: $font-color-base;
+
+  @include mix.respond(md) { font-size: $font-size-base-mobile; }
 }
 
 p {
@@ -51,9 +59,18 @@ p {
 // ---------------------------------------------------
 // Headings
 // ---------------------------------------------------
-h1, h2 {
-  font-size: $font-size-heading;
-  font-weight:    $font-weight-heading;
-  line-height:    $line-height-heading;
-  letter-spacing: $letter-spc-heading;
+h1 {
+  font-size:      $font-size-h1;
+  font-weight:    $font-weight-h1; 
+  line-height:    $line-height-h1;
+  letter-spacing: $letter-spc-h1;
+}
+
+h2 {
+  font-size:      $font-size-h2;
+  font-weight:    $font-weight-h2; 
+  letter-spacing: $letter-spc-h2;
+  text-transform: uppercase;
+
+  @include mix.respond(md) { font-size: $font-size-base-mobile; }
 }

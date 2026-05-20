@@ -3,7 +3,6 @@
 
 .header {
   @include mix.flex(column, center, center, token.$gutter);
-  text-align: center;
   
   &__text { max-width: 32ch; }
 

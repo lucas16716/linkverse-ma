@@ -1,38 +1,46 @@
 @use "../abstracts/tokens" as token;
 @use "../abstracts/mixins" as mix;
+@use "../abstracts/functions" as fn;
 
 // ---------------------------------------------------
 // Semantic Panel Tokens
 // ---------------------------------------------------
-$glass-panel-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-$glass-panel-border:      2px solid rgba(212, 175, 55, .18);
-$glass-panel-border-top:  2px solid rgba(212, 175, 55, 0.45);
-$glass-panel-border-left: 2px solid rgba(212, 175, 55, 0.25);
-$glass-panel-border-rd:   token.$radius-xxl;
 $glass-panel-padding:     token.$space-40 token.$space-16;
+$glass-panel-bg:          linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+$glass-panel-border:      1px solid rgba(212, 175, 55, .18);
+$glass-panel-border-left: 1px solid rgba(212, 175, 55, 0.25);
+$glass-panel-border-rd:   token.$radius-lg;
+$glass-panel-shadow:      0 24px 48px rgba(0, 0, 0, 0.8), 0 0 80px rgba(212, 175, 55, 0.04);
+$glass-panel-op-anim:     token.$opacity-0;
+$glass-panel-animation:   fadeUp token.$duration-fadeUp token.$ease-fadeUp forwards;
+$glass-panel-border-anim: breathingGlow token.$duration-breathing ease-in-out token.$duration-fadeUp infinite;
 
 .glass-panel {
+  position: relative; 
+  z-index: fn.z(base);
+  padding: $glass-panel-padding;
   background: $glass-panel-bg;
-
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-
   border: $glass-panel-border;
-  border-top: $glass-panel-border-top;
   border-left: $glass-panel-border-left;
-
   border-radius: $glass-panel-border-rd;
-  padding: $glass-panel-padding;
+  box-shadow: $glass-panel-shadow;
+  opacity: token.$opacity-0;
+  animation: $glass-panel-animation;
 
-  box-shadow:
-    0 24px 48px rgba(0, 0, 0, 0.8),
-    0 0 80px rgba(212, 175, 55, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15); /* Fio de luz refletindo no corte do vidro em cima */
-
-  isolation: isolate;
-  overflow: hidden;
-  opacity: 0;
-
-  /* Chama a animação global que você criou na base */
-  animation: fadeUp 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -1px; 
+    border-radius: inherit;
+    z-index: fn.z(back);
+    pointer-events: none;
+    border: 2px solid rgba(212, 175, 55, 0.35);
+    border-left: 2px solid rgba(212, 175, 55, 0.50);
+    box-shadow: 0 0 120px rgba(212, 175, 55, 0.12);
+    opacity: $glass-panel-op-anim;
+    will-change: opacity;
+    animation: $glass-panel-border-anim;
+  }
 }
