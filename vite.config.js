@@ -8,7 +8,8 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-
+  base: "/ma-cambio-linkverse/",
+  
   // Root of the project — where index.html lives
   root: ".",
 
