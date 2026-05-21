@@ -2,7 +2,7 @@
 
 // ===================================================
 // BASE: ANIMATIONS
-// Definições globais de keyframes para animações de UI.
+// Definições globais de keyframes para animações de UI
 // ===================================================
 
 // ---------------------------------------------------
@@ -13,7 +13,7 @@ $animations-opacity-1: token.$opacity-100;
 
 // ---------------------------------------------------
 // 1. FADE UP
-// Entrada suave de baixo para cima.
+// Entrada suave de baixo para cima
 // ---------------------------------------------------
 
 @keyframes fadeUp {
@@ -29,13 +29,28 @@ $animations-opacity-1: token.$opacity-100;
 
 // ---------------------------------------------------
 // 2. BORDER GLOW (GPU-Optimized)
-// Brilho pulsante em bordas, usando apenas opacidade para performance.
+// Brilho pulsante em bordas, usando apenas opacidade para performance
 // ---------------------------------------------------
 @keyframes breathingGlow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0;
   }
   50% {
     opacity: 1;
+  }
+}
+
+// ---------------------------------------------------
+// 3. PHYSICAL PULSE (GPU-Optimized)
+// Pulsação física em elementos, usando apenas transform para performance
+// ---------------------------------------------------
+@keyframes physicalPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
   }
 }

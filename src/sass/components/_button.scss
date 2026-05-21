@@ -2,30 +2,63 @@
 @use "../abstracts/mixins" as mix;
 @use "../abstracts/functions" as fn;
 
-// ---------------------------------------------------
+// ===================================================
 // Semantic Button Tokens
-// ---------------------------------------------------
-$gap-btn:            token.$space-ui-8;
-$padding-btn:        token.$space-ui-14 token.$space-ui-18;
-$padding-btn-mobile: token.$space-ui-10 token.$space-ui-14;
+// ===================================================
 
-$bg-color-btn: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
+// Layout
+$gap-btn:            token.$space-ui-14;
+$gap-btn-mobile:     token.$space-ui-10;
+$padding-btn:        token.$space-ui-14 token.$space-ui-18;
+$padding-btn-mobile: token.$space-ui-10;
+
+// Surface
+$bg-color-btn:
+  linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+
 $border-btn:         1px solid rgba(token.$gold, 0.4);
 $border-radius-btn:  token.$radius-md;
 $box-shadow-btn:     token.$shadow-xl;
 
+// Icon Wrapper
+$bg-icon-wrapper:
+  linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+
+$border-icon:        1px solid rgba(255, 255, 255, 0.05);
+
+$shadow-icon:
+  0 4px 8px rgba(0, 0, 0, 0.2),
+  inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+$color-icon:         token.$white;
+$color-icon-hover:   token.$gold;
+
+// Typography & Motion
 $font-weight-btn:    token.$font-weight-medium;
 $line-height-btn:    token.$line-height-none;
+
 $transition-btn:     token.$duration-400 token.$ease-back;
 
 $op-dsbld-btn:       token.$opacity-60;
 
-// ---------------------------------------------------
-// Button Default
-// ---------------------------------------------------
+// ===================================================
+// Button
+// ===================================================
+
 .button {
   @include mix.flex($justify: start, $align: center, $gap: $gap-btn);
-  padding: $padding-btn;  @include mix.respond(md) { padding: $padding-btn-mobile; }
+
+  position: relative;
+  overflow: hidden;
+  padding: $padding-btn;
 
   background: $bg-color-btn;
   backdrop-filter: blur(16px);
@@ -33,7 +66,7 @@ $op-dsbld-btn:       token.$opacity-60;
   border: $border-btn;
   border-radius: $border-radius-btn;
   box-shadow: $box-shadow-btn;
-  
+
   font-weight: $font-weight-btn;
   line-height: $line-height-btn;
   text-decoration: none;
@@ -44,44 +77,175 @@ $op-dsbld-btn:       token.$opacity-60;
 
   transition:
     background $transition-btn,
-    color $transition-btn,
     border-color $transition-btn,
     box-shadow $transition-btn,
     transform $transition-btn;
 
+  @include mix.respond(sm) {
+    padding: $padding-btn-mobile;
+    gap: $gap-btn-mobile;
+  }
+
+  // ---------------------------------------------------
+  // Shine Effect
+  // ---------------------------------------------------
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.08),
+        transparent
+      );
+
+    transform: skewX(-25deg);
+    z-index: fn.z(base);
+    pointer-events: none;
+  }
+
+  // ---------------------------------------------------
+  // Hover & Active States
+  // ---------------------------------------------------
+
   @media (hover: hover) {
     &:hover {
-      color: fn.color-dark(token.$white, 10%); /* Escurece menos, apenas um toque */
-      transform: translateY(-2px); /* Movimento quase imperceptível */
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%); /* Clareia muito sutilmente */
-      border-color: rgba(token.$gold, 0.7); /* Borda ganha só um leve reflexo */
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra mais contida e difusa */
+      transform: translateY(-2px);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.08) 0%,
+          rgba(255, 255, 255, 0.02) 100%
+        );
+      border-color: rgba(token.$gold, 0.7);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+
+      &::before {
+        left: 150%;
+        transition: left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .button__icon-wrapper {
+        transform: scale(1.05);
+        background:
+          linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.12) 0%,
+            rgba(255, 255, 255, 0.04) 100%
+          );
+        border-color: rgba(token.$gold, 0.3);
+        color: $color-icon-hover;
+        box-shadow:
+          0 6px 12px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(token.$gold, 0.2);
+      }
     }
   }
 
-  &:focus-visible {
-    color: fn.color-dark(token.$white, 10%);
-    transform: translateY(-2px);
-    border-color: rgba(token.$gold, 0.7);
-    box-shadow: 
-      0 8px 20px rgba(0, 0, 0, 0.4),
-      0 0 0 1px rgba(token.$gold, 0.3); /* Anel de foco mais fino (1px) e discreto */
-  }
-
   &:active {
-    transform: translateY(0); /* Apenas anula o hover, sem afundar a tela */
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 100%);
+    transform: translateY(0);
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.04) 0%,
+        transparent 100%
+      );
     border-color: rgba(token.$gold, 0.4);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra volta para perto do botão */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      left: -150%;
+      transition: none;
+    }
+
+    .button__icon-wrapper {
+      transform: scale(0.98);
+    }
   }
 
   // ---------------------------------------------------
-  // Button Disabled
+  // Disabled
   // ---------------------------------------------------
-  &:disabled { cursor: not-allowed; opacity: $op-dsbld-btn; }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: $op-dsbld-btn;
+    pointer-events: none;
+  }
 
   // ---------------------------------------------------
-  // Button Variants
+  // Elements
   // ---------------------------------------------------
-  
+
+  &__icon-wrapper {
+    @include mix.flex(row, center, center, 0);
+    flex-shrink: 0;
+    position: relative;
+    z-index: fn.z(sticky);
+
+    width: clamp(2.125rem, 3.8vw + 1.17rem, 3rem);
+    height: clamp(2.125rem, 3.8vw + 1.17rem, 3rem);
+
+    background: $bg-icon-wrapper;
+    border: $border-icon;
+    border-radius: token.$radius-full;
+    box-shadow: $shadow-icon;
+    color: $color-icon;
+
+    transition:
+      background $transition-btn,
+      border-color $transition-btn,
+      box-shadow $transition-btn,
+      color $transition-btn,
+      transform $transition-btn;
+  }
+
+  &__icon-svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
+  }
+
+  // ---------------------------------------------------
+  // Variant: Highlight
+  // ---------------------------------------------------
+
+  &.highlight {
+    background:
+      rgba(token.$gold, 0.15);
+    border-color: rgba(token.$gold, 0.6);
+
+    animation: physicalPulse 3.5s ease-in-out infinite;
+
+    .button__icon-wrapper {
+      color: token.$gold;
+      border-color: rgba(token.$gold, 0.3);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        animation-play-state: paused;
+        transform: scale(1.02) translateY(-2px);
+        border-color: token.$gold;
+      }
+    }
+
+    &:active {
+      animation-play-state: paused;
+      transform: scale(0.98) translateY(0);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(token.$gold, 0.10) 0%,
+          transparent 100%
+        );
+    }
+  }
 }

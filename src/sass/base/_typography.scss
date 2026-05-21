@@ -20,16 +20,17 @@ $letter-spc-base:  token.$letter-spacing-normal; // 0em
 $font-color-base:  token.$white;
 
 // Paragraphs (variants)
-$font-size-tagline: token.$font-size-sm;         // 12px -> 13px
+$font-size-tagline: token.$font-size-xs;         // 11px -> 12px
+$font-size-tagline-link: token.$font-size-xxs;   // 8px -> 12px
 
 // Headings
-$font-size-h1:   token.$font-size-lg;            // 22px -> 18px
+$font-size-h1:   token.$font-size-lg;            // 17px -> 21px
 $font-weight-h1: token.$font-weight-medium;      // Medium
 $line-height-h1: token.$line-height-tight;       // 1.2
 $letter-spc-h1:  token.$letter-spacing-tight;    // -0.02em
 
 $font-size-h2:   token.$font-size-md;            // 14px -> 16px
-$font-size-h2-mobile: token.$font-size-sm;       // 12px -> 13px
+$font-size-h2-mobile: token.$font-size-xs;       // 11px -> 12px
 $font-weight-h2: token.$font-weight-regular;     // Regular
 $letter-spc-h2:  token.$letter-spacing-wide;     // 0.15em
 
@@ -49,12 +50,9 @@ body {
   letter-spacing: $letter-spc-base;
   color: $font-color-base;
 
-  @include mix.respond(md) { font-size: $font-size-base-mobile; }
+  @include mix.respond(sm) { font-size: $font-size-base-mobile; }
 }
 
-p {
-  &.tagline { font-size: $font-size-tagline; color: fn.color-dark($font-color-base, 25%); }
-}
 
 // ---------------------------------------------------
 // Headings
@@ -72,5 +70,22 @@ h2 {
   letter-spacing: $letter-spc-h2;
   text-transform: uppercase;
 
-  @include mix.respond(md) { font-size: $font-size-base-mobile; }
+  @include mix.respond(sm) { font-size: $font-size-h2-mobile; }
+}
+
+// ---------------------------------------------------
+// Variants
+// ---------------------------------------------------
+.tagline {
+  font-size: $font-size-tagline;
+  color: fn.color-dark($font-color-base, 25%);
+
+  &-link {
+    font-size: $font-size-tagline-link; 
+    color: fn.color-dark($font-color-base, 25%); 
+    white-space: wrap;
+    margin-top: token.$space-ui-6;
+
+     @include mix.respond(sm) { margin-top: token.$space-ui-6; }
+  }
 }

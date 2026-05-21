@@ -4,7 +4,9 @@
 .header {
   @include mix.flex(column, center, center, token.$gutter);
   
-  &__text { max-width: 32ch; }
+  &__text {
+    // max-width: 30ch; 
 
-  p  { margin-top: token.$space-ui-12; }
+    h1  { margin-bottom: token.$space-ui-12; }
+  } 
 }

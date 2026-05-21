@@ -20,8 +20,8 @@ $glass-panel-border-anim: breathingGlow token.$duration-breathing ease-in-out to
   z-index: fn.z(base);
   padding: $glass-panel-padding;
   background: $glass-panel-bg;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
   border: $glass-panel-border;
   border-left: $glass-panel-border-left;
   border-radius: $glass-panel-border-rd;
@@ -43,4 +43,21 @@ $glass-panel-border-anim: breathingGlow token.$duration-breathing ease-in-out to
     will-change: opacity;
     animation: $glass-panel-border-anim;
   }
+
+  .button-list { @include mix.flex($direction: column, $gap: token.$space-ui-12); }
+
+  .button-group {
+  display: flex;
+  gap: token.$space-ui-10; // Mantém o mesmo espaçamento padrão
+  width: 100%;
+
+  /* O Pulo do Gato: Força os botões internos a dividirem o espaço */
+  .button {
+    flex: 1; /* Cada botão pega metade do espaço */
+    width: auto; /* Sobrescreve o 100% da classe base para não quebrar a linha */
+    /* Dependendo do tamanho do texto, pode ser legal centralizar o conteúdo nesses botões menores */
+    white-space: wrap; /* Evita que o texto quebre em múltiplas linhas */
+    line-height: 1.3;
+  }
+}
 }
