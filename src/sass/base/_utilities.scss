@@ -77,21 +77,16 @@
 .section-divider {
   @include mix.flex (row, center, center, token.$space-16);
   margin-top: token.$section-pad;
-  margin-bottom: 24px;
+  margin-bottom: token.$space-24;
 
   &::before,
   &::after {
     content: "";
-    flex: 1; /* Faz as linhas esticarem para preencher o espaço vazio */
+    flex: 1;
     height: 1px;
   }
 
-  /* 5. O Toque Sênior: Gradiente para a linha "sumir" nas pontas */
-  &::before {
-    background: linear-gradient(to right, transparent, rgba(token.$gold, 0.6));
-  }
+  &::before { background: linear-gradient(to right, transparent, rgba(token.$gold, 0.6)); }
 
-  &::after {
-    background: linear-gradient(to left, transparent, rgba(token.$gold, 0.6));
-  }
+  &::after  { background: linear-gradient(to left, transparent, rgba(token.$gold, 0.6)); }
 }

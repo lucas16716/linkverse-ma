@@ -8,8 +8,8 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/ma-cambio-linkverse/",
-  
+  base: "/linkverse-ma/",
+
   // Root of the project — where index.html lives
   root: ".",
 
@@ -18,6 +18,7 @@ export default defineConfig({
 
   // Development server settings
   server: {
+    host: true,
     port: 3000,
     open: true,
   },
@@ -39,5 +40,4 @@ export default defineConfig({
     // Sourcemaps in development (helps debug Sass in DevTools)
     devSourcemap: true,
   },
-
 });

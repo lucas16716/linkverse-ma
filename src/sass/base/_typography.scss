@@ -34,6 +34,10 @@ $font-size-h2-mobile: token.$font-size-xs;       // 11px -> 12px
 $font-weight-h2: token.$font-weight-regular;     // Regular
 $letter-spc-h2:  token.$letter-spacing-wide;     // 0.15em
 
+$font-size-h3:   token.$font-size-sm;            // 12px -> 13px
+$font-weight-h3: token.$font-weight-medium;      // Medium
+$line-height-h3: token.$line-height-tight;       // 1.2
+
 // ---------------------------------------------------
 // Default Typography
 // ---------------------------------------------------
@@ -73,19 +77,27 @@ h2 {
   @include mix.respond(sm) { font-size: $font-size-h2-mobile; }
 }
 
+h3 {
+  font-size:      $font-size-h3;
+  font-weight:    $font-weight-h3;
+  line-height:    $line-height-h3;
+  z-index:        fn.z(sticky);
+  text-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.9),
+    0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
 // ---------------------------------------------------
 // Variants
 // ---------------------------------------------------
 .tagline {
   font-size: $font-size-tagline;
   color: fn.color-dark($font-color-base, 25%);
+  margin-top:  token.$space-ui-12;
 
   &-link {
     font-size: $font-size-tagline-link; 
-    color: fn.color-dark($font-color-base, 25%); 
-    white-space: wrap;
+    color: fn.color-dark($font-color-base, 30%); 
     margin-top: token.$space-ui-6;
-
-     @include mix.respond(sm) { margin-top: token.$space-ui-6; }
   }
 }
