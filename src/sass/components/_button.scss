@@ -12,8 +12,8 @@ $padding-btn:        token.$space-ui-14 token.$space-ui-18;
 $padding-btn-mobile: token.$space-ui-10;
 
 // Surface
-$bg-color-btn:       linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
-$border-btn:         1px solid rgba(token.$gold, 0.4);
+$bg-color-btn:       linear-gradient(135deg, rgba(25, 30, 40, 0.6) 0%, rgba(15, 15, 15, 0.8) 100%);
+$border-btn:         1px solid rgba(token.$gold, 0.3);
 $border-radius-btn:  token.$radius-md;
 $box-shadow-btn:     token.$shadow-xl;
 
@@ -248,4 +248,21 @@ $op-dsbld-btn:       token.$opacity-60;
       &:hover { transform: translateY(0); img { transform: scale(1.05); } } 
     }
   // }
+
+  // ---------------------------------------------------
+  // Variant: Contact
+  // ---------------------------------------------------
+  &.contact {
+    .button__text {
+      color: fn.color-dark(token.$white, 30%); 
+      text-transform: uppercase;
+      font-size: token.$font-size-xxs;
+    }
+
+    .tagline-link {
+      color: token.$white;
+      font-size: inherit;
+      @include mix.respond(xxs) { font-size: clamp(0.58125rem, 4.31425vw - 0.22767rem, 0.79696rem); }
+    }
+  }
 }

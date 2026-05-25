@@ -19,10 +19,6 @@ $line-height-base: token.$line-height-none;      // 1
 $letter-spc-base:  token.$letter-spacing-normal; // 0em
 $font-color-base:  token.$white;
 
-// Paragraphs (variants)
-$font-size-tagline: token.$font-size-xs;         // 11px -> 12px
-$font-size-tagline-link: token.$font-size-xxs;   // 8px -> 12px
-
 // Headings
 $font-size-h1:   token.$font-size-lg;            // 17px -> 21px
 $font-weight-h1: token.$font-weight-medium;      // Medium
@@ -37,6 +33,10 @@ $letter-spc-h2:  token.$letter-spacing-wide;     // 0.15em
 $font-size-h3:   token.$font-size-sm;            // 12px -> 13px
 $font-weight-h3: token.$font-weight-medium;      // Medium
 $line-height-h3: token.$line-height-tight;       // 1.2
+
+// Paragraphs (variants)
+$font-size-tagline: token.$font-size-xs;         // 11px -> 12px
+$font-size-tagline-link: token.$font-size-xxs;   // 8px -> 12px
 
 // ---------------------------------------------------
 // Default Typography
