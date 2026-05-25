@@ -20,8 +20,8 @@ $glass-panel-border-anim: breathingGlow token.$duration-breathing ease-in-out to
   z-index: fn.z(base);
   padding: $glass-panel-padding;
   background: $glass-panel-bg;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   backface-visibility: hidden;
