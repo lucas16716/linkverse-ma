@@ -6,7 +6,7 @@
 // Semantic Panel Tokens
 // ---------------------------------------------------
 $glass-panel-padding:     token.$space-40 token.$space-ui-16;
-$glass-panel-bg:          linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+$glass-panel-bg:          black; //linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
 $glass-panel-border:      1px solid rgba(212, 175, 55, .18);
 $glass-panel-border-left: 1px solid rgba(212, 175, 55, 0.25);
 $glass-panel-border-rd:   token.$radius-lg;
@@ -19,25 +19,18 @@ $glass-panel-border-anim: breathingGlow token.$duration-breathing ease-in-out to
   position: relative; 
   z-index: fn.z(base);
   padding: $glass-panel-padding;
-    
+  background: $glass-panel-bg;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
   border: $glass-panel-border;
   border-left: $glass-panel-border-left;
   border-radius: $glass-panel-border-rd;
   box-shadow: $glass-panel-shadow;
   opacity: token.$opacity-0;
   animation: $glass-panel-animation;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* Estica para o mesmo tamanho do pai */
-    border-radius: inherit; /* Copia a borda arredondada */
-    z-index: fn.z(back); /* Fica no fundo, atrás de tudo que está dentro do painel */
-    
-    background: $glass-panel-bg;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-  }
 
   &::after {
     content: "";
