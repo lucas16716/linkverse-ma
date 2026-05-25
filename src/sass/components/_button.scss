@@ -85,7 +85,7 @@ $op-dsbld-btn:       token.$opacity-60;
   // ---------------------------------------------------
   // Hover & Active States
   // ---------------------------------------------------
-  @media (hover: hover) {
+  // @media (hover: hover) {
     &:hover {
       transform: translateY(-2px);
 
@@ -106,7 +106,7 @@ $op-dsbld-btn:       token.$opacity-60;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(token.$gold, 0.2);
       }
     }
-  }
+  // }
 
   &:active {
     transform: translateY(0);
@@ -198,13 +198,13 @@ $op-dsbld-btn:       token.$opacity-60;
       border-color: rgba(token.$gold, 0.3);
     }
 
-    @media (hover: hover) {
+    // @media (hover: hover) {
       &:hover {
         animation-play-state: paused;
         transform: scale(1.02) translateY(-2px);
         border-color: token.$gold;
       }
-    }
+    // }
 
     &:active {
       animation-play-state: paused;
@@ -244,6 +244,8 @@ $op-dsbld-btn:       token.$opacity-60;
     // ---------------------------------------------------
     // Microinteração do Card
     // ---------------------------------------------------
-    @media (hover: hover) { &:hover { transform: translateY(0); img { transform: scale(1.05); } } }
-  }
+    // @media (hover: hover) { 
+      &:hover { transform: translateY(0); img { transform: scale(1.05); } } 
+    }
+  // }
 }
