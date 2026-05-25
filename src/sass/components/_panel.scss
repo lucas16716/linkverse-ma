@@ -5,7 +5,7 @@
 // ---------------------------------------------------
 // Semantic Panel Tokens
 // ---------------------------------------------------
-$glass-panel-padding:     token.$space-40 token.$space-ui-18;
+$glass-panel-padding:     token.$space-40 token.$space-ui-16;
 $glass-panel-bg:          linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
 $glass-panel-border:      1px solid rgba(212, 175, 55, .18);
 $glass-panel-border-left: 1px solid rgba(212, 175, 55, 0.25);
@@ -20,8 +20,8 @@ $glass-panel-border-anim: breathingGlow token.$duration-breathing ease-in-out to
   z-index: fn.z(base);
   padding: $glass-panel-padding;
   background: $glass-panel-bg;
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
   border: $glass-panel-border;
   border-left: $glass-panel-border-left;
   border-radius: $glass-panel-border-rd;
