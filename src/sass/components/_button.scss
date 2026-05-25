@@ -191,7 +191,7 @@ $op-dsbld-btn:       token.$opacity-60;
 
     background: rgba(token.$gold, 0.15);
     border-color: rgba(token.$gold, 0.6);
-    animation: physicalPulse 2s ease-in-out infinite;
+    animation: physicalPulse 1.6s ease-in-out infinite;
 
     .button__icon-wrapper {
       color: token.$gold;
@@ -263,6 +263,61 @@ $op-dsbld-btn:       token.$opacity-60;
       color: token.$white;
       font-size: inherit;
       @include mix.respond(xxs) { font-size: clamp(0.58125rem, 4.31425vw - 0.22767rem, 0.79696rem); }
+    }
+  }
+}
+
+// ---------------------------------------------------
+// Social Buttons (Icon Only)
+// ---------------------------------------------------
+// ===================================================
+// Social Button Variant (Standalone)
+// ===================================================
+.social-list {
+  @include mix.flex($justify: center, $align: center, $gap: token.$space-ui-16);
+  margin-top: token.$space-16;
+}
+
+.social-btn {
+  // Comporta-se como um bloco em linha para ficarem lado a lado
+  display: inline-flex;
+  cursor: pointer;
+  text-decoration: none;
+
+  &.button__icon-wrapper {
+    width: 3rem;
+    height: 3rem;
+
+      .button__icon-svg {
+      width: 1.3em;
+      height: 1.3em;
+    }
+  }
+
+  // ---------------------------------------------------
+  // Hover & Active States (Herdando a estética do wrapper)
+  // ---------------------------------------------------
+  // @media (hover: hover) {
+    &:hover {
+      transform: translateY(-2px) scale(1.05);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+      border-color: rgba(token.$gold, 0.3);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(token.$gold, 0.2);
+
+      .button__icon-svg {
+        fill: $color-icon-hover;
+        transform: scale(1.1);
+      }
+    }
+  // }
+
+  &:active {
+    transform: translateY(0) scale(0.98);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    .button__icon-svg {
+      transform: scale(0.95);
     }
   }
 }
