@@ -79,6 +79,10 @@
   margin-top: token.$section-pad;
   margin-bottom: token.$space-24;
 
+  &.variant {
+    margin-top: token.$space-32;
+  }
+
   &::before,
   &::after {
     content: "";

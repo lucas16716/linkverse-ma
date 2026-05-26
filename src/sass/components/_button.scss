@@ -187,7 +187,7 @@ $op-dsbld-btn:       token.$opacity-60;
   // Variant: Highlight
   // ---------------------------------------------------
   &.highlight {
-    margin-top: token.$space-24;
+    margin-top: token.$space-32;
 
     background: rgba(token.$gold, 0.15);
     border-color: rgba(token.$gold, 0.6);
@@ -268,16 +268,8 @@ $op-dsbld-btn:       token.$opacity-60;
 }
 
 // ---------------------------------------------------
-// Social Buttons (Icon Only)
-// ---------------------------------------------------
-// ===================================================
 // Social Button Variant (Standalone)
-// ===================================================
-.social-list {
-  @include mix.flex($justify: center, $align: center, $gap: token.$space-ui-16);
-  margin-top: token.$space-16;
-}
-
+// ---------------------------------------------------
 .social-btn {
   // Comporta-se como um bloco em linha para ficarem lado a lado
   display: inline-flex;
@@ -288,9 +280,19 @@ $op-dsbld-btn:       token.$opacity-60;
     width: 3rem;
     height: 3rem;
 
+    @include mix.respond(xxs) {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+
       .button__icon-svg {
-      width: 1.3em;
-      height: 1.3em;
+      width: 1.3rem;
+      height: 1.3rem;
+
+      @include mix.respond(xxs) {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
     }
   }
 

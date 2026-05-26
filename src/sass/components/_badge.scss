@@ -1,4 +1,5 @@
 @use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mix;
 
 // ===================================================
 // AXIS — BADGE (Structural Component)
@@ -8,20 +9,19 @@
 // ---------------------------------------------------
 // Semantic Badge Tokens
 // ---------------------------------------------------
-// $font-size-badge:   token.$font-13;
+$font-size-badge:   token.$font-size-micro;
 $line-height-badge: token.$line-height-none;
 $border-rd-badge:   token.$radius-full;
-$padding-badge:     token.$space-ui-6 token.$space-ui-12;
-$gap-badge:         token.$space-ui-2;
+$padding-badge:     clamp(0.625rem, 2.222vw + 0.2083rem, 0.875rem) clamp(0.875rem, 2.222vw + 0.4583rem, 1.125rem); 
+$gap-badge:         token.$space-ui-10;
+$gap-badge-mobile:  token.$space-ui-8;
 
 // ---------------------------------------------------
 // Badge Default
 // ---------------------------------------------------
 .badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: $gap-badge;
+  @include mix.flex($align: center);
+  gap: $gap-badge; @include mix.respond(sm) { gap: $gap-badge-mobile; }
 
   padding: $padding-badge;
 
@@ -29,9 +29,11 @@ $gap-badge:         token.$space-ui-2;
   border: 1px solid currentColor;
   border-radius: $border-rd-badge;
 
-  // font-size: $font-size-badge;
+  font-size: $font-size-badge;
   line-height: $line-height-badge;
   
+  text-transform: uppercase;
+  text-decoration: none;
   white-space: nowrap;
   user-select: none;
   vertical-align: middle;

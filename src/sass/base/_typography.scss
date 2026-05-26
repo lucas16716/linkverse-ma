@@ -35,8 +35,7 @@ $font-weight-h3: token.$font-weight-medium;      // Medium
 $line-height-h3: token.$line-height-tight;       // 1.2
 
 // Paragraphs (variants)
-$font-size-tagline: token.$font-size-xs;         // 11px -> 12px
-$font-size-tagline-link: token.$font-size-xxs;   // 8px -> 12px
+
 
 // ---------------------------------------------------
 // Default Typography
@@ -90,14 +89,30 @@ h3 {
 // ---------------------------------------------------
 // Variants
 // ---------------------------------------------------
+$font-size-tagline:      token.$font-size-xs;                  // 11px -> 12px
+$font-size-tagline-link: token.$font-size-xxs;                 // 8px -> 12px
+$color-tagline:          fn.color-dark($font-color-base, 30%); // Tom ardósia claro para leitura
+
+$font-size-copy-company: token.$font-size-xxs;                 // 8px -> 12px 
+$letter-spacing-copy:    token.$letter-spacing-copy;           // 0.05em
+$line-height-copy:      token.$line-height-tight;              // 1.2
+
 .tagline {
-  font-size: $font-size-tagline;
-  color: fn.color-dark($font-color-base, 25%);
-  margin-top:  token.$space-ui-12;
+  font-size:  $font-size-tagline;
+  color:      $color-tagline;
+  margin-top: token.$space-ui-12;
 
   &-link {
-    font-size: $font-size-tagline-link; 
-    color: fn.color-dark($font-color-base, 30%); 
+    font-size:  $font-size-tagline-link; 
+    color:      $color-tagline; 
     margin-top: token.$space-ui-6;
   }
+}
+.company-copy {
+  font-size:      $font-size-copy-company;
+  color:          fn.color-dark($font-color-base, 65%);
+  line-height:    $line-height-copy;
+  letter-spacing: $letter-spacing-copy;
+  text-align:     center;
+  text-transform: uppercase;
 }
