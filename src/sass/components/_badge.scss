@@ -7,21 +7,48 @@
 // ===================================================
 
 // ---------------------------------------------------
-// Semantic Badge Tokens
+// Semantic Badge Tokens (Base)
 // ---------------------------------------------------
 $font-size-badge:   token.$font-size-micro;
+$font-weight-badge: token.$font-weight-medium;
 $line-height-badge: token.$line-height-none;
 $border-rd-badge:   token.$radius-full;
-$padding-badge:     clamp(0.625rem, 2.222vw + 0.2083rem, 0.875rem) clamp(0.875rem, 2.222vw + 0.4583rem, 1.125rem); 
+$padding-badge:     clamp(0.625rem, 0.3448vw + 0.556rem, 0.875rem) clamp(0.75rem, 0.5172vw + 0.6465rem, 1.125rem);
 $gap-badge:         token.$space-ui-10;
 $gap-badge-mobile:  token.$space-ui-8;
+
+// ---------------------------------------------------
+// Semantic Badge Tokens (Modifier: Signature)
+// ---------------------------------------------------
+$bg-signature-badge:           rgba(15, 15, 15, 0.95);
+$border-color-signature-badge: rgba(255, 255, 255, 0.05);
+$transition-signature-badge:   token.$duration-200 token.$ease-standard;
+
+// Typography Shared Base
+$letter-spacing-signature:     token.$letter-spacing-copy;
+$color-text-signature:         rgba(255, 255, 255, 0.2);
+$color-text-strong-signature:  rgba(255, 255, 255, 0.33);
+
+// The Logo - Lucas Code
+$width-logo:                   clamp(0.875rem, 1.5vw + 0.2rem, 1.125rem);
+$height-logo:                  clamp(0.875rem, 1.5vw + 0.2rem, 1.125rem);
+$opacity-logo:                 token.$opacity-40;
+$transition-logo:              token.$duration-200 token.$ease-fadeUp;
+
+// Micro-interactions (Hover / Active)
+$bg-hover-signature-badge:           rgba(15, 15, 15, 0.95);
+$border-color-hover-signature-badge: rgba(token.$gold, 0.35);
+$box-shadow-hover-signature-badge:   0 12px 24px rgba(0, 0, 0, 0.4), 0 0 20px rgba(token.$gold, 0.15);
+$color-text-hover-signature:         rgba(255, 255, 255, 0.7);
+$opacity-logo-hover:                 token.$opacity-100;
 
 // ---------------------------------------------------
 // Badge Default
 // ---------------------------------------------------
 .badge {
   @include mix.flex($align: center);
-  gap: $gap-badge; @include mix.respond(sm) { gap: $gap-badge-mobile; }
+  gap: $gap-badge; 
+  @include mix.respond(sm) { gap: $gap-badge-mobile; }
 
   padding: $padding-badge;
 
@@ -30,11 +57,69 @@ $gap-badge-mobile:  token.$space-ui-8;
   border-radius: $border-rd-badge;
 
   font-size: $font-size-badge;
+  font-weight: $font-weight-badge;
   line-height: $line-height-badge;
   
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  user-select: none;
   vertical-align: middle;
+
+  // ---------------------------------------------------
+  // Badge Modifiers: Creator Signature
+  // ---------------------------------------------------
+   &.creator-badge {
+    background-color: $bg-signature-badge;
+    border-color: $border-color-signature-badge;
+    transition: all $transition-signature-badge;
+
+    @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+      background: rgba(15, 15, 15, 0.70);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    // Typography Shared Base   
+    .creator-badge__cta, .creator-badge__text {
+      letter-spacing: $letter-spacing-signature;
+      color: $color-text-signature;
+      transition: color $transition-signature-badge;
+      
+      .hover {
+        color:      $color-text-strong-signature;
+        transition: color $transition-signature-badge;
+      }
+    }
+
+    // The Logo - Lucas Code
+    .creator-badge__logo {
+      width: $width-logo;
+      height: $height-logo;
+      background-image: url('/assets/media/img/lucascode.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: $opacity-logo;
+      transition: all $transition-logo;
+    }
+
+    // Micro-interactions (Hover / Active)
+    &:hover, &:active {
+      background: $bg-hover-signature-badge;
+      border-color: $border-color-hover-signature-badge;
+      transform: translateY(-2px); 
+      box-shadow: $box-shadow-hover-signature-badge;
+
+      .creator-badge__text, .creator-badge__cta {
+        color: $color-text-hover-signature;
+        .hover { color: token.$gold; }
+      }
+      
+      .creator-badge__logo { 
+        opacity: $opacity-logo-hover;
+        transform: scale(1.15) rotate(5deg);
+        filter: drop-shadow(0 0 6px rgba(token.$gold, 0.6));
+      }
+    }   
+  }
 }

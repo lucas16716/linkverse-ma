@@ -1,106 +1,16 @@
 @use "../abstracts/tokens" as token;
-@use "../abstracts/mixins" as mix;
 
 // ---------------------------------------------------
 // Company Copy (Inside Glass Panel)
 // ---------------------------------------------------
 .company-copy {
-  margin-top:  token.$gutter;
+  margin-top: token.$gutter;
   padding-top: token.$space-16;
 }
 
 // ---------------------------------------------------
 // Creator Signature (Outside Glass Panel)
 // ---------------------------------------------------
-.creator-signature { margin-block: token.$section-pad; }
-
-.creator-badge {
-  
-  /* 3. Estética Glassmorphism / Quiet Luxury */
-  background: rgba(15, 15, 15, 0.70);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  
-  
-  transition: all 0.2s ease;
-
-  // ---------------------------------------------------
-  // Typography Shared Base
-  // ---------------------------------------------------
-  &__text, &__cta {
-    
-    transition: color 0.2s ease;
-  }
-
-  // ---------------------------------------------------
-  // Left Side: Authorship
-  // ---------------------------------------------------
-  &__text {
-    color: rgba(255, 255, 255, 0.4); // Tom ardósia sutil
-    letter-spacing: 0.05em;
-    
-    strong {
-      color: rgba(255, 255, 255, 0.7);
-      font-weight: token.$font-weight-medium;
-      transition: color 0.2s ease;
-    }
-  }
-
-  // ---------------------------------------------------
-  // Right Side: CTA / Product
-  // ---------------------------------------------------
-  &__cta {
-    color: rgba(255, 255, 255, 0.5); // Levemente mais iluminado que a autoria
-    letter-spacing: 0.05em;
-
-    strong {
-      color: rgba(255, 255, 255, 0.8);
-      font-weight: token.$font-weight-bold;
-      transition: color 0.2s ease;
-    }
-  }
-
-  // ---------------------------------------------------
-  // Center: The Logo
-  // ---------------------------------------------------
-  &__logo {
-    /* Dimensões fluidas atuando como um separador premium */
-    width: clamp(0.875rem, 1.5vw + 0.2rem, 1.125rem); 
-    height: clamp(0.875rem, 1.5vw + 0.2rem, 1.125rem);
-    background-image: url('/assets/media/img/lucascode.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.4;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  // ===================================================
-  // Micro-interactions (Hover / Active)
-  // ===================================================
-  &:hover, &:active {
-    border-color: rgba(token.$gold, 0.35);
-    background: rgba(15, 15, 15, 0.95);
-    transform: translateY(-2px); // Pulo do CTA
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 0 20px rgba(token.$gold, 0.15);
-
-    // Textos ganham destaque e as palavras principais acendem em ouro
-    .creator-badge__text {
-      color: rgba(255, 255, 255, 0.7);
-      strong { color: token.$gold; }
-    }
-    
-    .creator-badge__cta {
-      color: rgba(255, 255, 255, 0.7);
-      strong { color: token.$gold; }
-    }
-    
-    // O seu ícone assume o palco principal
-    .creator-badge__logo { 
-      opacity: 1;
-      transform: scale(1.15) rotate(5deg);
-      filter: drop-shadow(0 0 6px rgba(token.$gold, 0.6));
-    }
-  }
+.creator-signature {
+  margin-block: token.$gutter;
 }

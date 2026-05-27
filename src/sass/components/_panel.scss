@@ -8,16 +8,14 @@
 $glass-panel-padding:     token.$section-pad token.$space-ui-16 token.$space-32;
 $glass-panel-bg:          linear-gradient(to bottom, 
                             rgba(15, 15, 15, 1) 0%, 
-                            rgba(15, 15, 15, 1) 15%,   /* Esticamos o preto puro até passar o logo! */
-                            rgba(20, 24, 33, 0.70) 35%, 
-                            rgba(20, 24, 33, 0.70) 75%, 
-                            rgba(15, 15, 15, 1) 95%, 
+                            rgba(20, 24, 33, 1) 35%, 
+                            rgba(20, 24, 33, 1) 75%, 
                             rgba(15, 15, 15, 1) 100%
                           );
 $glass-panel-border:      1px solid rgba(212, 175, 55, .18);
 $glass-panel-border-left: 1px solid rgba(212, 175, 55, 0.25);
 $glass-panel-border-rd:   token.$radius-lg;
-$glass-panel-shadow:      0 24px 48px rgba(0, 0, 0, 0.8), 0 0 80px rgba(212, 175, 55, 0.04);
+$glass-panel-shadow:      0 16px 32px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.05);
 $glass-panel-op-anim:     token.$opacity-0;
 $glass-panel-animation:   fadeUp token.$duration-fadeUp token.$ease-fadeUp forwards;
 $glass-panel-border-anim: breathingGlow token.$duration-breathing ease-in-out token.$duration-fadeUp infinite;
@@ -28,17 +26,14 @@ $glass-panel-border-anim: breathingGlow token.$duration-breathing ease-in-out to
   padding: $glass-panel-padding;
 
   background: $glass-panel-bg;
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-
   border: $glass-panel-border;
   border-left: $glass-panel-border-left;
   border-radius: $glass-panel-border-rd;
   box-shadow: $glass-panel-shadow;
+
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
   opacity: token.$opacity-0;
   animation: $glass-panel-animation;
 
@@ -51,16 +46,12 @@ $glass-panel-border-anim: breathingGlow token.$duration-breathing ease-in-out to
     pointer-events: none;
     border: 2px solid rgba(212, 175, 55, 0.35);
     border-left: 2px solid rgba(212, 175, 55, 0.50);
-    box-shadow: 0 0 120px rgba(212, 175, 55, 0.12);
+    box-shadow: 0 0 80px rgba(212, 175, 55, 0.1);
     opacity: $glass-panel-op-anim;
     will-change: opacity;
     animation: $glass-panel-border-anim;
   }
 
   .button-list { @include mix.flex($direction: column, $gap: token.$space-ui-10); }
-
-  .social-list {
-    @include mix.flex($justify: center, $align: center, $gap: token.$space-16);
-    
-  }
+  .social-list { @include mix.flex($justify: center, $align: center, $gap: token.$space-16); }
 }

@@ -95,7 +95,7 @@ $color-tagline:          fn.color-dark($font-color-base, 30%); // Tom ardósia c
 
 $font-size-copy-company: token.$font-size-xxs;                 // 8px -> 12px 
 $letter-spacing-copy:    token.$letter-spacing-copy;           // 0.05em
-$line-height-copy:      token.$line-height-tight;              // 1.2
+$line-height-copy:       token.$line-height-tight;              // 1.2
 
 .tagline {
   font-size:  $font-size-tagline;
@@ -110,7 +110,7 @@ $line-height-copy:      token.$line-height-tight;              // 1.2
 }
 .company-copy {
   font-size:      $font-size-copy-company;
-  color:          fn.color-dark($font-color-base, 65%);
+  color:          fn.color-dark($font-color-base, 80%);
   line-height:    $line-height-copy;
   letter-spacing: $letter-spacing-copy;
   text-align:     center;
