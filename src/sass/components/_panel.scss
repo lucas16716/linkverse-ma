@@ -5,7 +5,7 @@
 // ---------------------------------------------------
 // Semantic Panel Tokens
 // ---------------------------------------------------
-$glass-panel-padding:     token.$section-pad token.$space-ui-16 token.$space-32;
+$glass-panel-padding:     token.$section-pad token.$space-ui-16 token.$space-24;
 $glass-panel-bg:          linear-gradient(to bottom, 
                             rgba(15, 15, 15, 1) 0%, 
                             rgba(20, 24, 33, 1) 35%, 
@@ -53,5 +53,5 @@ $glass-panel-border-anim: breathingGlow token.$duration-breathing ease-in-out to
   }
 
   .button-list { @include mix.flex($direction: column, $gap: token.$space-ui-10); }
-  .social-list { @include mix.flex($justify: center, $align: center, $gap: token.$space-ui-12); margin-top: token.$gutter; }
+  .social-list { @include mix.flex($justify: center, $align: center, $gap: token.$space-ui-12); margin-top: token.$space-32; }
 }

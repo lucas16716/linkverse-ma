@@ -24,6 +24,7 @@ $shadow-icon:        0 4px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 
 $color-icon:         token.$white;
 $color-icon-hover:   token.$gold;
 
+
 // Typography & Motion
 $font-weight-btn:    token.$font-weight-medium;
 $line-height-btn:    token.$line-height-none;
@@ -275,6 +276,7 @@ $op-dsbld-btn:       token.$opacity-60;
   &.button__icon-wrapper {
     width: 3rem;
     height: 3rem;
+    // box-shadow: ;
 
     @include mix.respond(xxs) {
         width: 2.8rem;
