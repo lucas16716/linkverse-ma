@@ -16,6 +16,8 @@ button, input, textarea, select, a {
 
 ul, ol { list-style: none; }
 
+address { font-style: normal; }
+
 // Accessibility: Reduced Motion
 @media (prefers-reduced-motion: reduce) {
   * {
