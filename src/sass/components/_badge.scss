@@ -72,7 +72,7 @@ $opacity-logo-hover:                 token.$opacity-100;
    &.creator-badge {
     background-color: $bg-signature-badge;
     border-color: $border-color-signature-badge;
-    box-sizing: $box-shadow-signature-badge;
+    box-shadow: $box-shadow-signature-badge;
     transition: all $transition-signature-badge;
 
     @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
