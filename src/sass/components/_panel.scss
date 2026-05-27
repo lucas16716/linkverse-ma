@@ -53,5 +53,5 @@ $glass-panel-border-anim: breathingGlow token.$duration-breathing ease-in-out to
   }
 
   .button-list { @include mix.flex($direction: column, $gap: token.$space-ui-10); }
-  .social-list { @include mix.flex($justify: center, $align: center, $gap: token.$space-16); }
+  .social-list { @include mix.flex($justify: center, $align: center, $gap: token.$space-ui-12); margin-top: token.$gutter; }
 }

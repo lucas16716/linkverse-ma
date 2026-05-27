@@ -254,7 +254,7 @@ $op-dsbld-btn:       token.$opacity-60;
   // ---------------------------------------------------
   &.contact {
     .button__text {
-      color: fn.color-dark(token.$white, 30%); 
+      color: rgba(255, 255, 255, 0.5); 
       text-transform: uppercase;
       font-size: token.$font-size-xxs;
     }
@@ -271,10 +271,6 @@ $op-dsbld-btn:       token.$opacity-60;
 // Social Button Variant (Standalone)
 // ---------------------------------------------------
 .social-btn {
-  // Comporta-se como um bloco em linha para ficarem lado a lado
-  display: inline-flex;
-  cursor: pointer;
-  text-decoration: none;
 
   &.button__icon-wrapper {
     width: 3rem;

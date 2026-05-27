@@ -11,12 +11,12 @@ $font-primary: 'Raleway', Ubuntu, Cantarell, system-ui, -apple-system, sans-seri
 // ---------------------------------------------------
 // Font Size Scale
 // ---------------------------------------------------
-$font-size-micro: clamp(0.5rem, 0.4237vw + 0.4205rem, 0.8125rem);   // Signature (8px -> 13px)
-$font-size-xxs:   clamp(0.5625rem, 0.5vw + 0.46875rem, 0.75rem);    // Tagline buttons        (9px -> 12px)
-$font-size-xs:    clamp(0.6875rem, 1.25vw + 0.4375rem, 0.8125rem);  // Textos super pequenos  (11px -> 12px)                          
-$font-size-sm:    clamp(0.75rem, 1.11vw + 0.54rem, 0.875rem);       // Textos globais Mobile  (12px -> 13px)
-$font-size-md:    clamp(0.875rem, 0.78vw + 0.5rem, 1rem);           // Textos globais Desktop (14px -> 16px)
-$font-size-lg:    clamp(1.0625rem, 0.76vw + 0.885rem, 1.25rem);     // Título principal (H1)  (17px -> 21px)
+$font-size-micro: clamp(0.5rem, 0.431vw + 0.4138rem, 0.8125rem);      // Signature              (8px -> 13px)
+$font-size-xxs:   clamp(0.5625rem, 0.2586vw + 0.5108rem, 0.75rem);    // Tagline buttons        (9px -> 12px)
+$font-size-xs:    clamp(0.6875rem, 0.1724vw + 0.653rem, 0.8125rem);   // Textos super pequenos  (11px -> 13px)
+$font-size-sm:    clamp(0.75rem, 0.1724vw + 0.7155rem, 0.875rem);     // Textos globais Mobile  (12px -> 14px)
+$font-size-md:    clamp(0.875rem, 0.1724vw + 0.8405rem, 1rem);        // Textos globais Desktop (14px -> 16px)
+$font-size-lg:    clamp(1.0625rem, 0.2586vw + 1.0108rem, 1.25rem);    // Título principal/H1    (17px -> 20px)
 
 // ---------------------------------------------------
 // Font Weight Scale
@@ -24,7 +24,7 @@ $font-size-lg:    clamp(1.0625rem, 0.76vw + 0.885rem, 1.25rem);     // Título p
 $font-weight-light:    300;  // Usado em textos de apoio longos/subtítulos luxuosos
 $font-weight-regular:  400;  // Corpo de texto padrão
 $font-weight-medium:   500;  // Peso padrão para títulos e headings (H1, H2)
-$font-weight-semibold: 600;  // Adicionado para testes de realce intermediário nos botões  
+$font-weight-semibold: 600;  // Adicionado para testes de realce intermediário
 $font-weight-bold:     700;  // Ênfases pontuais e chamadas de alta importância
 
 // ---------------------------------------------------
