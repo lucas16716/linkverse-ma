@@ -3,33 +3,77 @@
 @use "../abstracts/functions" as fn;
 
 // ===================================================
-// Semantic Button Tokens
+// AXIS — BUTTON (Structural Component)
+// Project-specific interactive button system
 // ===================================================
-// Layout
+
+// ---------------------------------------------------
+// Semantic Button Tokens (Layout)
+// ---------------------------------------------------
 $gap-btn:            token.$space-ui-14;
 $gap-btn-mobile:     token.$space-ui-10;
 $padding-btn:        token.$space-ui-14 token.$space-ui-18;
 $padding-btn-mobile: token.$space-ui-10;
 
-// Surface
-$bg-color-btn:       linear-gradient(135deg, rgba(25, 30, 40, 0.6) 0%, rgba(15, 15, 15, 0.8) 100%);
-$border-btn:         1px solid rgba(token.$gold, 0.3);
-$border-radius-btn:  token.$radius-md;
-$box-shadow-btn:     token.$shadow-xl;
+// ---------------------------------------------------
+// Semantic Button Tokens (Surface)
+// ---------------------------------------------------
+$bg-btn:            linear-gradient(135deg, rgba(25, 30, 40, 0.6) 0%, rgba(15, 15, 15, 0.8) 100%);
+$border-btn:        1px solid rgba(token.$gold, 0.3);
+$border-radius-btn: token.$radius-md;
+$shadow-btn:        token.$shadow-xl;
 
-// Icon Wrapper
-$bg-icon-wrapper:    linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-$border-icon:        1px solid rgba(255, 255, 255, 0.05);
-$shadow-icon:        0 4px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-$color-icon:         token.$white;
-$color-icon-hover:   token.$gold;
+// ---------------------------------------------------
+// Semantic Button Tokens (Shine Effect)
+// ---------------------------------------------------
+$bg-shine-btn:         linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+$transition-shine-btn: 0.8s token.$ease-fadeUp;
 
+// ---------------------------------------------------
+// Semantic Button Tokens (Icon Wrapper)
+// ---------------------------------------------------
+$bg-icon-wrapper:   linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+$border-icon:       1px solid rgba(255, 255, 255, 0.05);
+$shadow-icon:       0 4px 8px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+$color-icon:        token.$white;
+$color-icon-hover:  token.$gold;
 
-// Typography & Motion
-$font-weight-btn:    token.$font-weight-medium;
-$line-height-btn:    token.$line-height-none;
-$transition-btn:     token.$duration-400 token.$ease-back;
-$op-dsbld-btn:       token.$opacity-60;
+// ---------------------------------------------------
+// Semantic Button Tokens (Typography & Motion)
+// ---------------------------------------------------
+$font-weight-btn:      token.$font-weight-medium;
+$line-height-btn:      token.$line-height-none;
+$transition-btn:       token.$duration-400 token.$ease-back;
+$opacity-disabled-btn: token.$opacity-60;
+
+// ---------------------------------------------------
+// Semantic Button Tokens (Hover States)
+// ---------------------------------------------------
+$bg-hover-btn:            linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+$border-color-hover-btn:  rgba(token.$gold, 0.7);
+$shadow-hover-btn:        0 8px 20px rgba(0, 0, 0, 0.4);
+$bg-hover-icon:           linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+$border-color-hover-icon: rgba(token.$gold, 0.3);
+$shadow-hover-icon:       0 6px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(token.$gold, 0.2);
+
+// ---------------------------------------------------
+// Semantic Button Tokens (Active States)
+// ---------------------------------------------------
+$bg-active-btn:           linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 100%);
+$border-color-active-btn: rgba(token.$gold, 0.4);
+$shadow-active-btn:       0 4px 8px rgba(0, 0, 0, 0.3);
+$shadow-active-social:    0 4px 8px rgba(0, 0, 0, 0.2);
+
+// ---------------------------------------------------
+// Semantic Button Tokens (Variant: Highlight)
+// ---------------------------------------------------
+$bg-active-highlight-btn: linear-gradient(135deg, rgba(token.$gold, 0.10) 0%, transparent 100%);
+
+// ---------------------------------------------------
+// Semantic Button Tokens (Variant: Services)
+// ---------------------------------------------------
+$bg-overlay-services:   linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 45%, transparent 85%);
+$transition-img-services: token.$duration-400 token.$ease-fadeUp;
 
 // ---------------------------------------------------
 // Button Default
@@ -46,12 +90,12 @@ $op-dsbld-btn:       token.$opacity-60;
     gap: $gap-btn-mobile;
   }
 
-  background: $bg-color-btn;
+  background: $bg-btn;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: $border-btn;
   border-radius: $border-radius-btn;
-  box-shadow: $box-shadow-btn;
+  box-shadow: $shadow-btn;
 
   font-weight: $font-weight-btn;
   line-height: $line-height-btn;
@@ -62,10 +106,9 @@ $op-dsbld-btn:       token.$opacity-60;
   cursor: pointer;
 
   transition:
-    background $transition-btn,
     border-color $transition-btn,
-    box-shadow $transition-btn,
-    transform $transition-btn;
+    box-shadow   $transition-btn,
+    transform    $transition-btn;
 
   // ---------------------------------------------------
   // Shine Effect
@@ -79,50 +122,45 @@ $op-dsbld-btn:       token.$opacity-60;
     left: -150%;
     width: 50%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+    background: $bg-shine-btn;
     transform: skewX(-25deg);
   }
 
   // ---------------------------------------------------
   // Hover & Active States
   // ---------------------------------------------------
-  // @media (hover: hover) {
-    &:hover {
-      transform: translateY(-2px);
+  &:hover {
+    transform: translateY(-2px);
+    background: $bg-hover-btn;
+    border-color: $border-color-hover-btn;
+    box-shadow: $shadow-hover-btn;
 
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-      border-color: rgba(token.$gold, 0.7);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-
-      &::before {
-        left: 150%;
-        transition: left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .button__icon-wrapper {
-        transform: scale(1.05);
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
-        border-color: rgba(token.$gold, 0.3);
-        color: $color-icon-hover;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(token.$gold, 0.2);
-      }
+    &::before {
+      left: 150%;
+      transition: left $transition-shine-btn;
     }
-  // }
+
+    .button__icon-wrapper {
+      transform: scale(1.05);
+      background: $bg-hover-icon;
+      border-color: $border-color-hover-icon;
+      color: $color-icon-hover;
+      box-shadow: $shadow-hover-icon;
+    }
+  }
 
   &:active {
     transform: translateY(0);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 100%);
-    border-color: rgba(token.$gold, 0.4);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: $bg-active-btn;
+    border-color: $border-color-active-btn;
+    box-shadow: $shadow-active-btn;
 
     &::before {
       left: -150%;
       transition: none;
     }
 
-    .button__icon-wrapper {
-      transform: scale(0.98);
-    }
+    .button__icon-wrapper { transform: scale(0.98); }
   }
 
   // ---------------------------------------------------
@@ -130,13 +168,16 @@ $op-dsbld-btn:       token.$opacity-60;
   // ---------------------------------------------------
   &:disabled {
     cursor: not-allowed;
-    opacity: $op-dsbld-btn;
+    opacity: $opacity-disabled-btn;
     pointer-events: none;
   }
 
   // ---------------------------------------------------
   // Elements
   // ---------------------------------------------------
+
+  // __title → see _typography.scss
+
   &__icon-wrapper {
     @include mix.flex(row, center, center, 0);
     flex-shrink: 0;
@@ -153,30 +194,12 @@ $op-dsbld-btn:       token.$opacity-60;
     color: $color-icon;
 
     transition:
-      background $transition-btn,
-      border-color $transition-btn,
-      box-shadow $transition-btn,
-      color $transition-btn,
-      transform $transition-btn;
+      background-color $transition-btn,
+      border-color     $transition-btn,
+      box-shadow       $transition-btn,
+      color            $transition-btn,
+      transform        $transition-btn;
   }
-
-  // TODO: TESTAR ESSA VARIANTE DE BOTÃO FLUTUANTE PARA WHATSAPP
-  // &.icon-float {
-    
-  //   position: fixed;
-  //   bottom: 10px;
-  //   right: 10px;
-  //   width: 3.5rem;
-  //   height: 3.5rem;
-  //   background: rgba(token.$gold, 0.15);
-  //   border:  rgba(token.$gold, 0.3);
-
-  //   svg {
-  //     width: 1.6rem;
-  //     height: 1.6rem;
-  //     fill: currentColor;
-  //   }
-  // }
 
   &__icon-svg {
     width: 1.2em;
@@ -189,7 +212,6 @@ $op-dsbld-btn:       token.$opacity-60;
   // ---------------------------------------------------
   &.highlight {
     margin-top: token.$space-24;
-
     background: rgba(token.$gold, 0.15);
     border-color: rgba(token.$gold, 0.6);
     animation: physicalPulse 1.6s ease-in-out infinite;
@@ -199,18 +221,16 @@ $op-dsbld-btn:       token.$opacity-60;
       border-color: rgba(token.$gold, 0.3);
     }
 
-    // @media (hover: hover) {
-      &:hover {
-        animation-play-state: paused;
-        transform: scale(1.02) translateY(-2px);
-        border-color: token.$gold;
-      }
-    // }
+    &:hover {
+      animation-play-state: paused;
+      transform: scale(1.02) translateY(-2px);
+      border-color: token.$gold;
+    }
 
     &:active {
       animation-play-state: paused;
       transform: scale(0.98) translateY(0);
-      background: linear-gradient(135deg, rgba(token.$gold, 0.10) 0%, transparent 100%);
+      background: $bg-active-highlight-btn;
     }
   }
 
@@ -219,43 +239,39 @@ $op-dsbld-btn:       token.$opacity-60;
   // ---------------------------------------------------
   &.services {
     @include mix.flex(column, flex-end, flex-start);
-    padding: token.$space-ui-16; 
+    padding: token.$space-ui-16;
     height: 240px;
     white-space: normal;
 
     &::after {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 45%, transparent 85%);
+      inset: 0;
+      background: $bg-overlay-services;
     }
 
-    // ---------------------------------------------------
-    // Elementos Internos do Card
-    // ---------------------------------------------------
-     img {
+    img {
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      width: 100%; height: 100%;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: center;
-      transition: transform token.$duration-400 cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform $transition-img-services;
     }
 
-    // ---------------------------------------------------
-    // Microinteração do Card
-    // ---------------------------------------------------
-    // @media (hover: hover) { 
-      &:hover { transform: translateY(0); img { transform: scale(1.05); } } 
+    &:hover {
+      transform: translateY(0);
+      img { transform: scale(1.05); }
     }
-  // }
+  }
 
   // ---------------------------------------------------
   // Variant: Contact
   // ---------------------------------------------------
   &.contact {
     .button__text {
-      color: rgba(255, 255, 255, 0.5); 
+      color: rgba(255, 255, 255, 0.5);
       text-transform: uppercase;
       font-size: token.$font-size-xxs;
     }
@@ -276,14 +292,13 @@ $op-dsbld-btn:       token.$opacity-60;
   &.button__icon-wrapper {
     width: 3rem;
     height: 3rem;
-    // box-shadow: ;
 
     @include mix.respond(xxs) {
-        width: 2.8rem;
-        height: 2.8rem;
-      }
+      width: 2.8rem;
+      height: 2.8rem;
+    }
 
-      .button__icon-svg {
+    .button__icon-svg {
       width: 1.3rem;
       height: 1.3rem;
 
@@ -295,29 +310,25 @@ $op-dsbld-btn:       token.$opacity-60;
   }
 
   // ---------------------------------------------------
-  // Hover & Active States (Herdando a estética do wrapper)
+  // Hover & Active States
   // ---------------------------------------------------
-  // @media (hover: hover) {
-    &:hover {
-      transform: translateY(-2px) scale(1.05);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
-      border-color: rgba(token.$gold, 0.3);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(token.$gold, 0.2);
+  &:hover {
+    transform: translateY(-2px) scale(1.05);
+    background: $bg-hover-icon;
+    border-color: $border-color-hover-icon;
+    box-shadow: $shadow-hover-icon;
 
-      .button__icon-svg {
-        fill: $color-icon-hover;
-        transform: scale(1.1);
-      }
+    .button__icon-svg {
+      fill: $color-icon-hover;
+      transform: scale(1.1);
     }
-  // }
+  }
 
   &:active {
     transform: translateY(0) scale(0.98);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 100%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
-    .button__icon-svg {
-      transform: scale(0.95);
-    }
+    background: $bg-active-btn;
+    box-shadow: $shadow-active-social;
+
+    .button__icon-svg { transform: scale(0.95); }
   }
 }

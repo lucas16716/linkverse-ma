@@ -64,16 +64,19 @@ $opacity-logo-hover:                 token.$opacity-100;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  vertical-align: middle;
 
   // ---------------------------------------------------
   // Badge Modifiers: Creator Signature
   // ---------------------------------------------------
-   &.creator-badge {
+  &.creator-badge {
     background-color: $bg-signature-badge;
     border-color: $border-color-signature-badge;
     box-shadow: $box-shadow-signature-badge;
-    transition: all $transition-signature-badge;
+    transition:
+      background-color $transition-signature-badge,
+      border-color     $transition-signature-badge,
+      box-shadow       $transition-signature-badge,
+      transform        $transition-signature-badge;
 
     @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
       background: rgba(15, 15, 15, 0.70);
@@ -102,7 +105,10 @@ $opacity-logo-hover:                 token.$opacity-100;
       background-repeat: no-repeat;
       background-position: center;
       opacity: $opacity-logo;
-      transition: all $transition-logo;
+      transition: 
+        opacity   $transition-logo,
+        transform $transition-logo,
+        filter    $transition-logo;
     }
 
     // Micro-interactions (Hover / Active)

@@ -2,13 +2,18 @@
 @use "../abstracts/mixins" as mix;
 
 // ===================================================
-// Semantic Button Tokens
+// AXIS — SWIPER (Third-party Override)
+// Pagination bullet customization for Swiper.js
 // ===================================================
+
+// ---------------------------------------------------
+// Semantic Swiper Tokens
+// ---------------------------------------------------
 $bg-bullet:          rgba(255, 255, 255, 0.3);
-$bg-bullet-active:     rgba(token.$gold, 0.8);
-$op1-bullet:           token.$opacity-100;
-$transition-bullet:    token.$duration-300 token.$ease-standard;
-$wd-bullet-active:     token.$space-ui-18;
+$bg-bullet-active:   rgba(token.$gold, 0.8);
+$opacity-bullet:     token.$opacity-100;
+$transition-bullet:  token.$duration-300 token.$ease-standard;
+$width-bullet-active:  token.$space-ui-18;
 $radius-bullet-active: token.$radius-full;
 
 // ---------------------------------------------------
@@ -20,21 +25,21 @@ $radius-bullet-active: token.$radius-full;
 }
 
 // ---------------------------------------------------
-// Swiper Customization
+// Pagination Bullets
 // ---------------------------------------------------
 .swiper-pagination-bullet {
-  background: $bg-bullet !important; 
-  opacity: $op1-bullet !important;
+  background: $bg-bullet !important;
+  opacity: $opacity-bullet !important;
   transition:
-    width $transition-bullet,
-    background $transition-bullet,
-    border-radius $transition-bullet;
+    width            $transition-bullet,
+    background-color $transition-bullet,
+    border-radius    $transition-bullet;
 
   &:focus-visible { @include mix.focus-ring(token.$white); }
 }
 
 .swiper-pagination-bullet-active {
-  background: $bg-bullet-active !important; 
-  width: $wd-bullet-active !important;
+  background: $bg-bullet-active !important;
+  width: $width-bullet-active !important;
   border-radius: $radius-bullet-active !important;
 }
