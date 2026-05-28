@@ -2,37 +2,47 @@
 @use "../abstracts/mixins" as mix;
 @use "../abstracts/functions" as fn;
 
-
 // ===================================================
 // AXIS — TYPOGRAPHY BASE
 // ===================================================
 
 // ---------------------------------------------------
-// Semantic Tokens
+// Semantic Tokens (Base)
 // ---------------------------------------------------
-// Base
-$font-family-base: token.$font-primary;          // Raleway, Ubuntu, Cantarell, system-ui, -apple-system, sans-serif
-$font-size-base:   token.$font-size-md;          // 14px -> 16px
-$font-size-base-mobile: token.$font-size-sm;     // 12px -> 13px
-$font-weight-base: token.$font-weight-medium;   // Medium
-$line-height-base: token.$line-height-none;      // 1
-$letter-spc-base:  token.$letter-spacing-normal; // 0em
-$font-color-base:  token.$white;
+$font-family-base:       token.$font-primary;           // Raleway, Ubuntu, Cantarell, system-ui, -apple-system, sans-serif
+$font-size-base:         token.$font-size-md;           // 14px → 16px
+$font-size-base-mobile:  token.$font-size-sm;           // 12px → 14px
+$font-weight-base:       token.$font-weight-medium;     // 500 — herdado por todos os elementos
+$line-height-base:       token.$line-height-none;       // 1
+$letter-spc-base:        token.$letter-spacing-normal;  // 0em
+$font-color-base:        token.$white;
 
-// Headings
-$font-size-h1:   token.$font-size-lg;            // 17px -> 21px
-$font-weight-h1: token.$font-weight-medium;      // Medium
-$line-height-h1: token.$line-height-tight;       // 1.2
-$letter-spc-h1:  token.$letter-spacing-tight;    // -0.02em
+// ---------------------------------------------------
+// Semantic Tokens (Headings)
+// ---------------------------------------------------
+$font-size-h1:        token.$font-size-lg;              // 17px → 20px
+$line-height-h1:      token.$line-height-tight;         // 1.2
+$letter-spc-h1:       token.$letter-spacing-tight;      // -0.02em
 
-$font-size-h2:   token.$font-size-md;            // 14px -> 16px
-$font-size-h2-mobile: token.$font-size-xs;       // 11px -> 12px
-$font-weight-h2: token.$font-weight-regular;     // Regular
-$letter-spc-h2:  token.$letter-spacing-wide;     // 0.15em
+$font-size-h2:        token.$font-size-md;              // 14px → 16px
+$font-size-h2-mobile: token.$font-size-xs;              // 11px → 13px
+$font-weight-h2:      token.$font-weight-regular;       // 400 — override explícito (body é medium)
+$letter-spc-h2:       token.$letter-spacing-wide;       // 0.15em
 
-$font-size-h3:   token.$font-size-sm;            // 12px -> 13px
-$font-weight-h3: token.$font-weight-medium;      // Medium
-$line-height-h3: token.$line-height-tight;       // 1.2
+$font-size-h3:        token.$font-size-sm;              // 12px → 14px
+$line-height-h3:      token.$line-height-tight;         // 1.2
+
+// ---------------------------------------------------
+// Semantic Tokens (Variants)
+// ---------------------------------------------------
+$font-size-tagline:         token.$font-size-xs;                   // 11px → 13px
+$font-size-tagline-link:    token.$font-size-xxs;                  // 9px → 12px
+$color-tagline:             fn.color-dark($font-color-base, 30%);  // Tom ardósia claro
+
+$font-size-copy-company:    token.$font-size-xxs;                  // 9px → 12px
+$color-company-copy:        fn.color-dark($font-color-base, 70%);  // Tom ardósia escuro
+$letter-spacing-copy:       token.$letter-spacing-copy;            // 0.05em
+$line-height-copy:          token.$line-height-tight;              // 1.2
 
 // ---------------------------------------------------
 // Default Typography
@@ -43,30 +53,28 @@ html {
 }
 
 body {
-  font-family: $font-family-base;
-  font-size:   $font-size-base;
-  font-weight: $font-weight-base;
-  line-height: $line-height-base;
+  font-family:    $font-family-base;
+  font-size:      $font-size-base;
+  font-weight:    $font-weight-base;
+  line-height:    $line-height-base;
   letter-spacing: $letter-spc-base;
-  color: $font-color-base;
+  color:          $font-color-base;
 
   @include mix.respond(sm) { font-size: $font-size-base-mobile; }
 }
-
 
 // ---------------------------------------------------
 // Headings
 // ---------------------------------------------------
 h1 {
   font-size:      $font-size-h1;
-  font-weight:    $font-weight-h1; 
   line-height:    $line-height-h1;
   letter-spacing: $letter-spc-h1;
 }
 
 h2 {
   font-size:      $font-size-h2;
-  font-weight:    $font-weight-h2; 
+  font-weight:    $font-weight-h2;
   letter-spacing: $letter-spc-h2;
   text-transform: uppercase;
 
@@ -74,11 +82,10 @@ h2 {
 }
 
 h3 {
-  font-size:      $font-size-h3;
-  font-weight:    $font-weight-h3;
-  line-height:    $line-height-h3;
-  z-index:        fn.z(sticky);
-  text-shadow: 
+  font-size:   $font-size-h3;
+  line-height: $line-height-h3;
+  z-index:     fn.z(sticky);
+  text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.9),
     0 4px 12px rgba(0, 0, 0, 0.5);
 }
@@ -86,29 +93,21 @@ h3 {
 // ---------------------------------------------------
 // Variants
 // ---------------------------------------------------
-$font-size-tagline:      token.$font-size-xs;                  // 11px -> 12px
-$font-size-tagline-link: token.$font-size-xxs;                 // 8px -> 12px
-$color-tagline:          fn.color-dark($font-color-base, 30%); // Tom ardósia claro para leitura
-
-$font-size-copy-company: token.$font-size-xxs;                 // 8px -> 12px 
-$letter-spacing-copy:    token.$letter-spacing-copy;           // 0.05em
-$line-height-copy:       token.$line-height-tight;             // 1.2
-
 .tagline {
   font-size:  $font-size-tagline;
   color:      $color-tagline;
   margin-top: token.$space-ui-12;
 
   &-link {
-    font-size:  $font-size-tagline-link; 
-    color:      $color-tagline; 
+    font-size:  $font-size-tagline-link;
+    color:      $color-tagline;
     margin-top: token.$space-ui-6;
   }
 }
 
 .company-copy {
   font-size:      $font-size-copy-company;
-  color:          fn.color-dark($font-color-base, 80%);
+  color:          $color-company-copy;
   line-height:    $line-height-copy;
   letter-spacing: $letter-spacing-copy;
   text-align:     center;

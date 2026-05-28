@@ -13,7 +13,7 @@
 @mixin container( $max-width: map.get(token.$container-sizes, xl) ) {
   width: 100%;
   max-width: $max-width;
-  padding: token.$space-16;
+  padding: token.$space-ui-12;
   margin-inline: auto;
 }
 

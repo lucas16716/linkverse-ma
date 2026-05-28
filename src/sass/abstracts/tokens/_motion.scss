@@ -13,6 +13,7 @@ $duration-400: 0.4s;  // Expandable sections, drawers
 $duration-500: 0.5s;  // Larger UI transitions (modals)
 $duration-fadeUp: 3.5s;  // Fade up animation duration
 $duration-breathing: 8s; // Breathing animation duration
+$duration-pulse: 1.6s;   // Physical pulse animation
 
 // ---------------------------------------------------
 // Easing Curves
@@ -22,3 +23,4 @@ $ease-in:       cubic-bezier(0.4, 0, 1, 1);         // Exit transitions
 $ease-out:      cubic-bezier(0, 0, 0.2, 1);         // Enter transitions — elements appearing
 $ease-back:     cubic-bezier(0.34, 1.56, 0.64, 1);  // Playful micro-interactions
 $ease-fadeUp:   cubic-bezier(0.16, 1, 0.3, 1);      // Fade up animation
+$ease-symmetric: cubic-bezier(0.42, 0, 0.58, 1);    // Pulsação e loops simétricos

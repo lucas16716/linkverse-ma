@@ -2,10 +2,10 @@
   "name": "Linkverse | M&A Consultoria Câmbio",
   "short_name": "Linkverse M&A",
   "description": "Plataforma Linkverse para centralização de canais de contato e links importantes da M&A Consultoria Câmbio.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#050505",
+  "background_color": "#0f0f0f",
+  "theme_color": "#0B0B0D",
   "icons": [
     {
       "src": "/assets/favicon/icon-192.png",
@@ -17,7 +17,13 @@
       "src": "/assets/favicon/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/favicon/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

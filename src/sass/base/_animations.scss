@@ -1,56 +1,45 @@
 @use "../abstracts/tokens" as token;
 
 // ===================================================
-// BASE: ANIMATIONS
-// Definições globais de keyframes para animações de UI
+// AXIS — ANIMATIONS BASE
+// Keyframes globais de animações de UI
 // ===================================================
 
 // ---------------------------------------------------
 // Semantic Animation Tokens
 // ---------------------------------------------------
-$animations-opacity-0: token.$opacity-0;
-$animations-opacity-1: token.$opacity-100;
+$opacity-hidden:  token.$opacity-0;    // Estado inicial — invisível
+$opacity-visible: token.$opacity-100;  // Estado final   — visível
 
 // ---------------------------------------------------
-// 1. FADE UP
+// FADE UP
 // Entrada suave de baixo para cima
 // ---------------------------------------------------
-
 @keyframes fadeUp {
   0% {
-    opacity: $animations-opacity-0;
+    opacity:   $opacity-hidden;
     transform: translateY(32px);
   }
   100% {
-    opacity: $animations-opacity-1;
+    opacity:   $opacity-visible;
     transform: translateY(0);
   }
 }
 
 // ---------------------------------------------------
-// 2. BORDER GLOW (GPU-Optimized)
-// Brilho pulsante em bordas, usando apenas opacidade para performance
+// BREATHING GLOW (GPU-Optimized)
+// Brilho pulsante em bordas — apenas opacity para performance
 // ---------------------------------------------------
 @keyframes breathingGlow {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
+  0%, 100% { opacity: $opacity-hidden;  }
+  50%       { opacity: $opacity-visible; }
 }
 
 // ---------------------------------------------------
-// 3. PHYSICAL PULSE (GPU-Optimized)
-// Pulsação física em elementos, usando apenas transform para performance
+// PHYSICAL PULSE (GPU-Optimized)
+// Pulsação física em elementos — apenas transform para performance
 // ---------------------------------------------------
 @keyframes physicalPulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
+  0%, 100% { transform: scale(1);    }
+  50%       { transform: scale(1.02); }
 }

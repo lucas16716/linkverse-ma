@@ -1,0 +1,38 @@
+@use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mix;
+
+// ===================================================
+// AXIS — SECTION DIVIDER (Section Component)
+// Decorative heading divider with gold gradient lines
+// ===================================================
+
+// ---------------------------------------------------
+// Semantic Section Divider Tokens
+// ---------------------------------------------------
+$margin-top-divider:         token.$section-pad;    // Espaço antes do divider
+$margin-top-divider-variant: token.$space-32;       // Variante com menos espaço
+$margin-bottom-divider:      token.$space-24;
+$gap-divider:                token.$space-16;
+$color-line-divider:         token.$gold;
+$opacity-line-divider:       0.6;
+
+// ---------------------------------------------------
+// Section Divider
+// ---------------------------------------------------
+.section-divider {
+  @include mix.flex(row, center, center, $gap-divider);
+  margin-top:    $margin-top-divider;
+  margin-bottom: $margin-bottom-divider;
+
+  &.variant { margin-top: $margin-top-divider-variant; }
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+  }
+
+  &::before { background: linear-gradient(to right, transparent, rgba($color-line-divider, $opacity-line-divider)); }
+  &::after  { background: linear-gradient(to left,  transparent, rgba($color-line-divider, $opacity-line-divider)); }
+}

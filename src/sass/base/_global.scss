@@ -3,6 +3,16 @@
 // Element-level normalization
 // ===================================================
 
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #0f0f0f;
+  background-image: url("/assets/media/img/bg-fluid-lines.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;

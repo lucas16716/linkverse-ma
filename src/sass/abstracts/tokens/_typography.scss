@@ -1,6 +1,7 @@
 // ===================================================
-// ABSTRACTS: TOKENS - TYPOGRAPHY
-// Definições de fontes, pesos e escalas de tamanho fluidas para o projeto.
+// AXIS — TYPOGRAPHY TOKENS
+// Fonte, pesos, escala de tamanhos fluidos,
+// line-heights e letter-spacings do projeto.
 // ===================================================
 
 // ---------------------------------------------------
@@ -11,36 +12,30 @@ $font-primary: 'Raleway', Ubuntu, Cantarell, system-ui, -apple-system, sans-seri
 // ---------------------------------------------------
 // Font Size Scale
 // ---------------------------------------------------
-$font-size-micro: clamp(0.5rem, 0.431vw + 0.4138rem, 0.8125rem);      // Signature              (8px -> 13px)
-$font-size-xxs:   clamp(0.5625rem, 0.2586vw + 0.5108rem, 0.75rem);    // Tagline buttons        (9px -> 12px)
-$font-size-xs:    clamp(0.6875rem, 0.1724vw + 0.653rem, 0.8125rem);   // Textos super pequenos  (11px -> 13px)
-$font-size-sm:    clamp(0.75rem, 0.1724vw + 0.7155rem, 0.875rem);     // Textos globais Mobile  (12px -> 14px)
-$font-size-md:    clamp(0.875rem, 0.1724vw + 0.8405rem, 1rem);        // Textos globais Desktop (14px -> 16px)
-$font-size-lg:    clamp(1.0625rem, 0.2586vw + 1.0108rem, 1.25rem);    // Título principal/H1    (17px -> 20px)
+$font-size-micro: clamp(0.5rem, 0.431vw + 0.4138rem, 0.8125rem);      // Signature              (8px → 13px)
+$font-size-xxs:   clamp(0.5625rem, 0.2586vw + 0.5108rem, 0.75rem);    // Tagline buttons        (9px → 12px)
+$font-size-xs:    clamp(0.6875rem, 0.1724vw + 0.653rem, 0.8125rem);   // Textos super pequenos  (11px → 13px)
+$font-size-sm:    clamp(0.75rem, 0.1724vw + 0.7155rem, 0.875rem);     // Textos globais mobile  (12px → 14px)
+$font-size-md:    clamp(0.875rem, 0.1724vw + 0.8405rem, 1rem);        // Textos globais desktop (14px → 16px)
+$font-size-lg:    clamp(1.0625rem, 0.2586vw + 1.0108rem, 1.25rem);    // Título principal / H1  (17px → 20px)
 
 // ---------------------------------------------------
 // Font Weight Scale
 // ---------------------------------------------------
-$font-weight-light:    300;  // Usado em textos de apoio longos/subtítulos luxuosos
-$font-weight-regular:  400;  // Corpo de texto padrão
-$font-weight-medium:   500;  // Peso padrão para títulos e headings (H1, H2)
-$font-weight-semibold: 600;  // Adicionado para testes de realce intermediário
-$font-weight-bold:     700;  // Ênfases pontuais e chamadas de alta importância
+$font-weight-regular: 400;
+$font-weight-medium:  500;
 
 // ---------------------------------------------------
 // Line Height Scale
 // ---------------------------------------------------
 $line-height-none:   1;
 $line-height-tight:  1.2;
-$line-height-normal: 1.5; 
+$line-height-normal: 1.5;
 
 // ---------------------------------------------------
 // Letter Spacing Scale
 // ---------------------------------------------------
 $letter-spacing-tight:  -0.02em;
-$letter-spacing-normal: 0;
-$letter-spacing-copy:   0.05em;
-$letter-spacing-wide:   0.15em;
-// ---------------------------------------------------
-// Semantic Tokens in base/_typography.scss
-// ---------------------------------------------------
+$letter-spacing-normal:  0;
+$letter-spacing-copy:    0.05em;
+$letter-spacing-wide:    0.15em;

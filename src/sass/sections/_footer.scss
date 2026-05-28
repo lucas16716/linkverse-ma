@@ -1,15 +1,19 @@
 @use "../abstracts/tokens" as token;
 
+// ===================================================
+// AXIS — FOOTER (Section)
+// ===================================================
+
 // ---------------------------------------------------
 // Company Copy (Inside Glass Panel)
 // ---------------------------------------------------
 .company-copy {
-  margin-top: token.$space-32;
+  margin-top: token.$space-40;
 }
 
 // ---------------------------------------------------
 // Creator Signature (Outside Glass Panel)
 // ---------------------------------------------------
 .creator-signature {
-  margin-block: token.$gutter;
+  margin-block: token.$space-ui-12 token.$gutter;
 }
