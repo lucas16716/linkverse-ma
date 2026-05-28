@@ -8,7 +8,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/",
+  base: "./",
 
   // Root of the project — where index.html lives
   root: ".",
