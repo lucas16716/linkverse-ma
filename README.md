@@ -1,5 +1,94 @@
 <div align="center">
 
+<img src="public/assets/favicon/favicon.svg" width="110" height="110" alt="Logo M&A Consultoria Câmbio"/>
+
+# Linkverse • M&A Consultoria Câmbio
+
+**Hub centralizado de atendimento, produtos e roteamento inteligente (PWA)**
+
+_Plataforma projetada sob o conceito "Quiet Luxury", otimizada para máxima performance (100/100 Core Web Vitals) e acessibilidade de ponta._
+
+[![Status](https://img.shields.io/badge/status-concluído-e8e4de?style=flat-square&labelColor=3437e6&color=1c1b2e)]()&nbsp;
+[![Feito com AXIS](https://img.shields.io/badge/desenvolvido%20com-AXIS-e8e4de?style=flat-square&labelColor=10b981&color=1c1b2e)](https://github.com/lucas16716/axis)&nbsp;
+[![Finalidade](https://img.shields.io/badge/finalidade-freelance-e8e4de?style=flat-square&labelColor=orange&color=1c1b2e)]()&nbsp;
+[![Licença](https://img.shields.io/badge/licença-personalizada-e8e4de?style=flat-square&labelColor=ef4444&color=1c1b2e)](./LICENSE)
+
+</div>
+
+<p align="center">
+  <a href="#projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#estrutura">Estrutura</a>
+</p>
+
+<h2 id="projeto">PROJETO</h2>
+
+O **Linkverse** foi desenvolvido para substituir plataformas genéricas de "link-in-bio", entregando uma experiência proprietária, escalável e de alto valor agregado para a M&A Consultoria Câmbio.
+
+O projeto foi construído utilizando a arquitetura modular **AXIS** e empacotado via **Vite**, garantindo entrega de recursos minificados, imagens modernas (.webp) e suporte integral a Progressive Web App (PWA) para instalação nativa em dispositivos móveis. A semântica avançada do DOM garante navegação perfeita para leitores de tela e indexação impecável para mecanismos de busca.
+
+<h2 id="funcionalidades">DESTAQUES TÉCNICOS</h2>
+
+- **Acessibilidade Sênior (A11y):** Uso estrito de Landmarks (`<nav>`, `<address>`), supressão visual inteligente (`aria-hidden`, `sr-only`) e targets táteis de 48px para adequação WCAG.
+- **Performance LCP/CLS:** Configuração de `fetchpriority`, preloading de assets críticos e carregamento condicional (Lazy Load).
+- **Design System Modular:** Escala tipográfica fluida (`clamp()`), variáveis de estado e arquitetura de componentes guiada pelo padrão 7-1 SASS.
+- **Micro-Interações:** Animações orquestradas de painéis de vidro (Glassmorphism) e hover states enriquecidos.
+- **PWA Ready:** Manifest configurado, color-scheme de sistema e suporte a instalação em iOS/Android.
+
+<h2 id="tecnologias">TECNOLOGIAS</h2>
+
+| Tecnologia      | Uso                                                  |
+| --------------- | ---------------------------------------------------- |
+| HTML5           | Estrutura semântica (ARIA Labels, hgroups, regions)  |
+| Sass (SCSS)     | Arquitetura AXIS (Tokens, Mixins, Partials)          |
+| Vite            | Bundler, minificação e gestão de assets              |
+| JavaScript ES6+ | Lógica de inicialização e controle de carrossel      |
+| Swiper.js       | Implementação de carrossel touch de alta performance |
+| PWA             | Web App Manifest integrado                           |
+| GitHub Actions  | CI/CD para deploy automatizado no GitHub Pages       |
+
+<h2 id="estrutura">ESTRUTURA</h2>
+
+```
+linkverse-ma/
+├── public/
+│   ├── assets/              → Favicons, media e SVGs
+│   ├── CNAME                → Configuração de domínio personalizado
+│   └── manifest.json        → Configurações de PWA
+├── src/
+│   ├── js/
+│   │   └── script.js        → Core do sistema e importação Vite
+│   └── sass/
+│       ├── abstracts/       → Tokens, funções e mixins (AXIS)
+│       ├── base/            → Reset, tipografia, global e animações
+│       ├── components/      → Botões, swiper, painéis e badges
+│       ├── layout/          → Container, flex e grid
+│       ├── sections/        → Estruturas de footer e copy
+│       └── main.scss        → Ponto de entrada único
+├── .github/workflows/       → Esteira de deploy (CI/CD)
+├── index.html               → Interface principal
+├── vite.config.js           → Configuração do Bundler
+└── package.json
+```
+
+---
+
+<h2>LICENÇA</h2>
+
+Este projeto possui uma **licença profissional personalizada**. O código está disponível para consulta pública, estudos arquiteturais e portfólio. Porém é estritamente **proibida** sua reprodução, clonagem ou uso comercial sem autorização expressa.
+
+Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
+
+<h2>AUTOR</h2>
+
+Desenvolvido por **Lucas Code**
+
+- LinkedIn: [Lucas Couto](https://linkedin.com/in/lucas-couto)
+- Email: lvcas.code@gmail.com
+
+<div align="center">
+
 <img src="public/assets/favicon/favicon.svg" width="130" height="130" alt="AXIS symbol"/>
 
 # AXIS

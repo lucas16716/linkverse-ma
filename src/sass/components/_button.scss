@@ -129,7 +129,7 @@ $transition-img-services: token.$duration-400 token.$ease-fadeUp;
   // ---------------------------------------------------
   // Hover & Active States
   // ---------------------------------------------------
-  &:hover {
+  &:hover, &:focus-visible {
     transform: translateY(-2px);
     background: $bg-hover-btn;
     border-color: $border-color-hover-btn;
@@ -221,7 +221,7 @@ $transition-img-services: token.$duration-400 token.$ease-fadeUp;
       border-color: rgba(token.$gold, 0.3);
     }
 
-    &:hover {
+    &:hover, &:focus-visible {
       animation-play-state: paused;
       transform: scale(1.02) translateY(-2px);
       border-color: token.$gold;
@@ -288,7 +288,6 @@ $transition-img-services: token.$duration-400 token.$ease-fadeUp;
 // Social Button Variant (Standalone)
 // ---------------------------------------------------
 .social-btn {
-
   &.button__icon-wrapper {
     width: 3rem;
     height: 3rem;
@@ -312,7 +311,7 @@ $transition-img-services: token.$duration-400 token.$ease-fadeUp;
   // ---------------------------------------------------
   // Hover & Active States
   // ---------------------------------------------------
-  &:hover {
+  &:hover, &:focus-visible {
     transform: translateY(-2px) scale(1.05);
     background: $bg-hover-icon;
     border-color: $border-color-hover-icon;

@@ -1,21 +1,30 @@
-MIT License
+Licença de Uso Profissional e Comercial
+© 2026 Lucas Code & M&A Consultoria Câmbio – Todos os direitos reservados.
 
-Copyright (c) 2026 · Lucas Code
+Este repositório contém o código-fonte original do aplicativo web Linkverse da M&A Consultoria Câmbio. O propósito deste projeto é atuar como ferramenta oficial de roteamento e conversão da empresa, e como portfólio técnico de alto nível para o desenvolvedor Lucas Code.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Propriedade Intelectual e Direitos Autorais
+   O código-fonte, a arquitetura CSS modular baseada no AXIS, as lógicas de interação e a estrutura semântica foram desenvolvidos por Lucas Code. Todo o conteúdo institucional, logotipos, nomes comerciais, tipografia proprietária e identidade visual são de propriedade exclusiva da M&A Consultoria Câmbio.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. Permissões (O que é permitido)
+   Você está autorizado a:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+- Visualizar e consultar o código-fonte publicamente neste repositório;
+- Estudar a lógica de componentização, arquitetura SASS, otimizações de Core Web Vitals e configuração PWA para fins estritamente educacionais e de aprendizado;
+- Citar este projeto como referência de boas práticas em desenvolvimento Front-end, Acessibilidade (A11y) e UI/UX em fóruns ou estudos de caso, desde que atribuídos os devidos créditos.
+
+3. Restrições (O que é proibido)
+   Você NÃO está autorizado a:
+
+- Clonar, baixar ou hospedar este projeto em servidores próprios ou públicos para fins comerciais, criação de templates ou produtos concorrenciais;
+- Redistribuir ou comercializar partes ou a totalidade deste software como se fosse um produto próprio ou "white label";
+- Utilizar a marca M&A Consultoria Câmbio, selo Lucas Code, ou seus ativos visuais em qualquer outro contexto sem autorização prévia por escrito.
+
+4. Isenção de Responsabilidade
+   Este código é fornecido para consulta "como está". O desenvolvedor e a empresa proprietária não se responsabilizam pelo uso indevido da arquitetura aqui presente por terceiros sem a devida infraestrutura de deploy e suporte oficial.
+
+5. Contato e Autorizações
+   Para solicitações de licenciamento, consultoria técnica corporativa ou dúvidas sobre a arquitetura do código, entre em contato através dos canais oficiais:
+
+📧 Desenvolvedor Frontend: lvcas.code@gmail.com
+📧 M&A Consultoria Câmbio: maconsultoriacambio@gmail.com

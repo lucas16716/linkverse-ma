@@ -112,7 +112,7 @@ $opacity-logo-hover:                 token.$opacity-100;
     }
 
     // Micro-interactions (Hover / Active)
-    &:hover, &:active {
+    &:hover, &:active, &:focus-visible {
       background: $bg-hover-signature-badge;
       border-color: $border-color-hover-signature-badge;
       transform: translateY(-2px); 
