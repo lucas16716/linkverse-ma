@@ -1,30 +1,63 @@
-Licença de Uso Profissional e Comercial
-© 2026 Lucas Code & M&A Consultoria Câmbio – Todos os direitos reservados.
+# Licença Proprietária de Uso Profissional e Comercial
 
-Este repositório contém o código-fonte original do aplicativo web Linkverse da M&A Consultoria Câmbio. O propósito deste projeto é atuar como ferramenta oficial de roteamento e conversão da empresa, e como portfólio técnico de alto nível para o desenvolvedor Lucas Code.
+© 2026 LUCASCODE & M&A Consultoria Câmbio – Todos os direitos reservados.
 
-1. Propriedade Intelectual e Direitos Autorais
-   O código-fonte, a arquitetura CSS modular baseada no AXIS, as lógicas de interação e a estrutura semântica foram desenvolvidos por Lucas Code. Todo o conteúdo institucional, logotipos, nomes comerciais, tipografia proprietária e identidade visual são de propriedade exclusiva da M&A Consultoria Câmbio.
+Este repositório contém o código-fonte do Linkverse desenvolvido para a M&A Consultoria Câmbio, como parte da linha de produtos digitais da LUCASCODE.
 
-2. Permissões (O que é permitido)
-   Você está autorizado a:
+O projeto tem como finalidade fornecer uma experiência personalizada de hub de links institucional para a empresa contratante, além de compor o portfólio profissional do desenvolvedor responsável.
 
-- Visualizar e consultar o código-fonte publicamente neste repositório;
-- Estudar a lógica de componentização, arquitetura SASS, otimizações de Core Web Vitals e configuração PWA para fins estritamente educacionais e de aprendizado;
-- Citar este projeto como referência de boas práticas em desenvolvimento Front-end, Acessibilidade (A11y) e UI/UX em fóruns ou estudos de caso, desde que atribuídos os devidos créditos.
+## 1. Propriedade Intelectual
 
-3. Restrições (O que é proibido)
-   Você NÃO está autorizado a:
+O conceito do produto Linkverse, sua arquitetura de frontend, componentes, design system, estrutura de navegação, experiência do usuário (UX), interface visual (UI), identidade do produto e código-fonte são de propriedade intelectual da LUCASCODE.
 
-- Clonar, baixar ou hospedar este projeto em servidores próprios ou públicos para fins comerciais, criação de templates ou produtos concorrenciais;
-- Redistribuir ou comercializar partes ou a totalidade deste software como se fosse um produto próprio ou "white label";
-- Utilizar a marca M&A Consultoria Câmbio, selo Lucas Code, ou seus ativos visuais em qualquer outro contexto sem autorização prévia por escrito.
+Os logotipos, marcas registradas, conteúdos institucionais, textos comerciais, informações corporativas e demais ativos pertencem exclusivamente à M&A Consultoria Câmbio.
 
-4. Isenção de Responsabilidade
-   Este código é fornecido para consulta "como está". O desenvolvedor e a empresa proprietária não se responsabilizam pelo uso indevido da arquitetura aqui presente por terceiros sem a devida infraestrutura de deploy e suporte oficial.
+## 2. Permissões
 
-5. Contato e Autorizações
-   Para solicitações de licenciamento, consultoria técnica corporativa ou dúvidas sobre a arquitetura do código, entre em contato através dos canais oficiais:
+Você está autorizado a:
 
-📧 Desenvolvedor Frontend: lvcas.code@gmail.com
-📧 M&A Consultoria Câmbio: maconsultoriacambio@gmail.com
+- Visualizar este repositório publicamente para fins de estudo e referência;
+- Consultar a estrutura técnica do projeto para fins educacionais;
+- Utilizar este projeto como inspiração para estudos de UX/UI, arquitetura frontend e desenvolvimento web;
+- Compartilhar este projeto como referência técnica, desde que os devidos créditos sejam mantidos.
+
+## 3. Restrições
+
+Você NÃO está autorizado a:
+
+- Copiar, reproduzir ou redistribuir este projeto integralmente;
+- Clonar o Linkverse para uso comercial próprio ou de terceiros;
+- Comercializar versões derivadas deste projeto sem autorização formal da LUCASCODE;
+- Remover créditos autorais presentes no código-fonte ou na interface publicada;
+- Utilizar a identidade visual da M&A Consultoria Câmbio em qualquer contexto externo ao projeto original;
+- Reproduzir o design, estrutura visual ou experiência do usuário com a finalidade de criar produtos concorrentes ou white-label.
+
+## 4. Produto Linkverse
+
+O Linkverse é um produto proprietário da LUCASCODE.
+
+A contratação deste projeto concede à empresa cliente o direito de utilização da versão desenvolvida especificamente para sua marca e operação, não implicando transferência da propriedade intelectual do produto, de sua arquitetura ou de sua metodologia de desenvolvimento.
+
+## 5. Isenção de Responsabilidade
+
+Este projeto é disponibilizado publicamente apenas para fins de demonstração técnica e portfólio profissional.
+
+A LUCASCODE e a M&A Consultoria Câmbio não se responsabilizam por reproduções não autorizadas, modificações realizadas por terceiros ou utilizações indevidas do código-fonte.
+
+## 6. Créditos
+
+Desenvolvimento, UX/UI Design e Frontend Engineering:
+
+LUCASCODE
+Lucas Couto
+
+Projeto desenvolvido para:
+
+M&A Consultoria Câmbio
+
+## 7. Contato
+
+Para licenciamento, desenvolvimento de projetos personalizados ou utilização comercial do produto Linkverse:
+
+📧 [lvcas.code@gmail.com](mailto:lvcas.code@gmail.com)
+🌐 [Linkverse • LUCASCODE](https://bio.site/lucascode)
