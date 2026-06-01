@@ -7,6 +7,7 @@ import "../sass/main.scss";
 // Vendor (Libs / Imports)
 // --------------------------------------------------------------------------
 import { inject } from "@vercel/analytics";
+import { injectSpeedInsights } from "@vercel/speed-insights";
 import Swiper from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -14,6 +15,7 @@ import { A11y, Keyboard, Pagination } from "swiper/modules";
 
 // Inicializa o rastreamento da Vercel
 inject();
+injectSpeedInsights();
 
 // --------------------------------------------------------------------------
 // Swiper Carousels
