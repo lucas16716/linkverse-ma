@@ -12,7 +12,7 @@ $font-primary: 'Raleway', Ubuntu, Cantarell, system-ui, -apple-system, sans-seri
 // ---------------------------------------------------
 // Font Size Scale
 // ---------------------------------------------------
-$font-size-micro: clamp(0.5rem, 0.431vw + 0.4138rem, 0.8125rem);      // Signature              (8px → 13px)
+$font-size-micro: clamp(0.53125rem, 0.3879vw + 0.4537rem, 0.8125rem); // Signature              (8.5px → 13px)
 $font-size-xxs:   clamp(0.5625rem, 0.2586vw + 0.5108rem, 0.75rem);    // Tagline buttons        (9px → 12px)
 $font-size-xs:    clamp(0.6875rem, 0.1724vw + 0.653rem, 0.8125rem);   // Textos super pequenos  (11px → 13px)
 $font-size-sm:    clamp(0.75rem, 0.1724vw + 0.7155rem, 0.875rem);     // Textos globais mobile  (12px → 14px)

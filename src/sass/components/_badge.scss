@@ -31,14 +31,14 @@ $color-text-signature:         rgba(255, 255, 255, 0.2);
 $color-text-strong-signature:  rgba(255, 255, 255, 0.33);
 
 // The Logo - Lucas Code
-$width-logo:                   clamp(0.875rem, 0.3448vw + 0.806rem, 1.125rem);
-$height-logo:                  clamp(0.875rem, 0.3448vw + 0.806rem, 1.125rem);
+$width-logo:                   clamp(0.96875rem, 0.3879vw + 0.8912rem, 1.25rem);
+$height-logo:                  clamp(0.96875rem, 0.3879vw + 0.8912rem, 1.25rem);
 $opacity-logo:                 token.$opacity-40;
 $transition-logo:              token.$duration-200 token.$ease-fadeUp;
 
 // Micro-interactions (Hover / Active)
 $bg-hover-signature-badge:           rgba(15, 15, 15, 0.95);
-$border-color-hover-signature-badge: rgba(token.$gold, 0.35);
+$border-color-hover-signature-badge: rgba(token.$gold, 0.4);
 $box-shadow-hover-signature-badge:   0 12px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(token.$gold, 0.25);
 $color-text-hover-signature:         rgba(255, 255, 255, 0.7);
 $opacity-logo-hover:                 token.$opacity-100;
@@ -52,7 +52,7 @@ $opacity-logo-hover:                 token.$opacity-100;
   @include mix.respond(sm) { gap: $gap-badge-mobile; }
 
   padding: $padding-badge;
-
+  
   background-color: transparent;
   border: 1px solid currentColor;
   border-radius: $border-rd-badge;
@@ -125,7 +125,7 @@ $opacity-logo-hover:                 token.$opacity-100;
       
       .creator-badge__logo { 
         opacity: $opacity-logo-hover;
-        transform: scale(1.15) rotate(5deg);
+        transform: scale(1.15) rotate(-6deg);
         filter: drop-shadow(0 0 6px rgba(token.$gold, 0.6));
       }
     }   
