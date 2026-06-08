@@ -105,6 +105,7 @@ $opacity-logo-hover:                 token.$opacity-100;
       background-repeat: no-repeat;
       background-position: center;
       opacity: $opacity-logo;
+      mix-blend-mode: screen;
       transition: 
         opacity   $transition-logo,
         transform $transition-logo,
