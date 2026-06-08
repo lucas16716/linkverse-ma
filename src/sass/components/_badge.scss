@@ -78,10 +78,10 @@ $opacity-logo-hover:                 token.$opacity-100;
       box-shadow       $transition-signature-badge,
       transform        $transition-signature-badge;
 
-    @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+    @supports (backdrop-filter: blur(24px)) or (-webkit-backdrop-filter: blur(24px)) {
       background-color: rgba(15, 15, 15, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
     }
 
     // Typography Shared Base   
