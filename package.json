@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Plataforma Linkverse para centralização de canais de contato e links importantes da M&A Consultoria Câmbio.",
   "author": "Lucas Code",
-  "license": "MIT",
+  "type": "module",
+  "license": "Personalizada",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lucas16716/linkverse-ma.git"
@@ -23,6 +24,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "swiper": "^12.1.4"
   }
 }
