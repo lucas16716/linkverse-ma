@@ -13,7 +13,7 @@ $font-size-badge:   token.$font-size-micro;
 $font-weight-badge: token.$font-weight-medium;
 $line-height-badge: token.$line-height-none;
 $border-rd-badge:   token.$radius-full;
-$padding-badge:     clamp(0.625rem, 0.3448vw + 0.556rem, 0.875rem) clamp(0.75rem, 0.5172vw + 0.6465rem, 1.125rem);
+$padding-badge: clamp(0.75rem, 0.1724vw + 0.7155rem, 0.875rem) clamp(0.75rem, 0.5172vw + 0.6465rem, 1.125rem);
 $gap-badge:         token.$space-ui-10;
 $gap-badge-mobile:  token.$space-ui-8;
 
